@@ -13,11 +13,16 @@ h1,h2,h3{
   padding-bottom: 15px;
   font-size: 20px;
   background-color: rgba(0,0,0,0.0);
-}
+  
+//   &:hover{
+//     color:#fff;
+//   }
+  }
 
 .btn-white:hover{
   color:#fff;
-  background-color:#B5FFC4;
+  background-color:#7bdae8;
+  // opacity:0.3;
 }
 
 .top-hero-wrapper{
