@@ -1,3 +1,28 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.form-control{
+  height:45px;
+}
+
+.users-new-wrapper{
+  width:100vw;
+  height:100vh;
+  background-image: url("landscape-2990060_1920.jpg");
+  background-position:center center;
+  background-repeat:none;
+  background-attachment:fixed;
+  background-size:cover;
+  
+  .users-new-container{
+    padding-top:210px;
+    
+    .form-control{
+      margin-bottom:20px;
+    }
+  }
+}
+
+.text-white{
+  color:#fff;
+}
