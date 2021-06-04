@@ -10,17 +10,34 @@
   </head>
 
   <body>
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+    <% end %>
     
-   <% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
-   <% end %>
+    <nav class = "navbar navbar-default navbar-fixed-top navbar-transparent">
+      <div class = "container">
+        <%= link_to root_path do %>
+        
+        <% end %>
+      </div>
+    </nav>
     
-    <%= yield %>
     
-    <script>
-      $(function(){
-        $(".alert").fadeOut(5000);
-      });
-    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <%= yield %>
+    
+      <script>
+        $(function(){
+          $(".alert").fadeOut(10000);
+        });
+      </script>
   </body>
 </html>
