@@ -17,27 +17,30 @@
     <nav class = "navbar navbar-default navbar-fixed-top navbar-transparent">
       <div class = "container">
         <%= link_to root_path do %>
-        
+          <span><%= image_tag "Homeware And Living Logo.jpg" %></span>
         <% end %>
+        
+        <ul class = "nav navbar-nav navbar-right">
+          <% if logged_in? %>
+            <li>
+               ログイン中のユーザー: <%= @current_user.name %>
+            </li>
+            <li>
+              <%= link_to logout_path, method: :delete do %>
+                <%= image_tag "logout.png" ,class:"logout"%>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
       </div>
     </nav>
     
+    <%= yield %>
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-      <%= yield %>
-    
-      <script>
-        $(function(){
-          $(".alert").fadeOut(10000);
-        });
-      </script>
+    <script>
+      $(function(){
+        $(".alert").fadeOut(10000);
+      });
+    </script>
   </body>
 </html>

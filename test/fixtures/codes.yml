@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cd: 1
+  cd_type: MyString
+  name: MyString
+
+two:
+  cd: 1
+  cd_type: MyString
+  name: MyString
