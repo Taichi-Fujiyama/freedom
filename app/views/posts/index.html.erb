@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <div class = "home-wrapper">
+      <div class = "header">
+        <ul class = "user_information">
+        　<% if logged_in? %>
+            <li>
+               ログイン中のユーザー: <%= @current_user.name %>
+            </li>
+            <li>
+             　user_level：
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    
+      <div class = "main">
+        <p class = "test" >test-text</p>
+      </div>
+      
+    </div>
+  </body>
+</html>

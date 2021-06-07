@@ -2,10 +2,9 @@ Rails.application.routes.draw do
   get 'sessions/new'
   root "home#top"
  
-  # get 'users/create' 
-  # get "user/new" => "users#new"
-  
   get 'posts/create'
+  # ホーム画面で業務を一覧表示させるため、indexアクションとする
+  get  "/home" => "posts#index" 
   
   resources :users
   
