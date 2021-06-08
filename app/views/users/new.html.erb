@@ -5,8 +5,7 @@
         <h1 class ="text-center text-white">Sign up</h1>
         <!--  submitボタンを押した時に、任意のページに飛ばしたい場合は、<%#= form_for @変数, url: ~_path do |f| %>とする-->
         <!--ただし、今回は上記の様に行ってしまうとログイン判定ができなかったので、sessions-controllerのログイン後のパスを変更する形で対応する-->
-          <!--<%#= form_for @user,url: users_path  do |f| %>-->
-          <%= form_for @user,method: :get  do |f| %>
+          <%= form_for @user,url: users_path  do |f| %>
             <div class="form-group">
               <%= f.label :name, class: 'text-white' %>
               <%= f.text_field :name, class: 'form-control' %>

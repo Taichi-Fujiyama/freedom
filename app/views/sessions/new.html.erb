@@ -7,7 +7,6 @@
       
         <!--form_forのHTTPメソッドはデフォルトでPOSTになっているため、リンクを指定して他のページに飛ばしたい場合はmethod: :getとして変える必要があった-->
         <%= form_for :sessions,url: login_path do |f| %>
-        <!--<%#=# form_for :sessions do |f| %>-->
           <div class = "form-group">
             <%= f.label :email,class:"text-white" %>
             <%= f.text_field :email,class:"form-control" %>
