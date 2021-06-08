@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    
-  </head>
   <body>
     <div class = "home-wrapper">
-      <div class = "header">
-        <ul class = "user_information">
-        　<% if logged_in? %>
-            <li>
-               ログイン中のユーザー: <%= @current_user.name %>
-            </li>
-            <li>
-             　user_level：
-            </li>
-          <% end %>
-        </ul>
+      <div class = "container">
+        <div class = "row">
+          <div class = "col-md-7 user_information">
+            <ul class = "user_status">
+        　     <% if logged_in? %>
+                <li class = "current_user_name">
+                 ログイン中のユーザー: <%= @current_user.name %>
+                </li>
+                <li class = "user_level">
+             　   user_level：
+                </li>
+              <% end %>
+            </ul>
+          </div>
+          <div class = "col-md-1"></div>
+          <!--<div class = "col-md-4 add_work_btn">業務追加</div>-->
+          <p class = "col-md-4 add_work_btn">業務追加</p>
+          <div class = "row">
+            <div class = "col-md-7 work_index">
+              <p class = "work_title">業務一覧</p>
+            </div>
+            <div class = "col-md-5 work_chart">
+              <p class = "work_title2">業務状況</p>
+              <div class = "pie_chart"></div>
+              <div class = "work_status_info"></div>
+            </div>
+          </div>
+          
+        </div>
       </div>
-    
-      <div class = "main">
-        <p class = "test" >test-text</p>
-      </div>
-      
     </div>
   </body>
 </html>

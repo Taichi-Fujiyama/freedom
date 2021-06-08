@@ -1,12 +1,97 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.header{
-  padding-top:30px;
-  padding-left:30px;
-  margin-top:60px;
+.row{
+  margin:10px 0px;
 }
+
+.home-wrapper{
+  width:100vp;
+  height:100vh;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-size:cover;
+  background: #43C6AC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #F8FFAE, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #F8FFAE, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.user_information{
+  
+  margin-top:90px;
+  background-color:#fff;
+  padding:0px;
+  
+  .user_status{
+    height:90px;
+    list-style:none;
+    padding:30px;
+    
+    
+    .current_user_name{
+      padding:10px;
+      background-color:lightcyan;
+      margin-right:50px;
+      margin-left:15px;
+      font-size:20px;
+    }
+    
+    .user_level{
+      padding:10px;
+      background-color:lightcyan;
+      margin-right:50px;
+      font-size:20px;
+    }
+  }
+  
+  .user_status li{
+    float:left;
+  }
+}
+
+.add_work_btn{
+  margin-top:90px;
+  padding:30px;
+  height:100px;
+  background-color:#fff;
+  
+}
+
 .test{
   margin-top:100px;
 }
 
+
+
+
+.work_index{
+  height:550px;
+  background-color:#fff;
+  // padding-top:10px;
+  
+  .work_title{
+    padding:10px;
+    background-color:lightcyan;
+    margin-top:10px;
+    margin-left:15px;
+    font-size:20px;
+    width:150px;
+  }
+}
+
+.work_chart{
+  height:550px;
+  background-color:#fff;
+  
+  .work_title2{
+    padding:10px;
+    background-color:lightcyan;
+    margin-top:10px;
+    margin-left:15px;
+    font-size:20px;
+    width:150px;
+  }
+  
+  
+}

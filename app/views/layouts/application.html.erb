@@ -16,15 +16,16 @@
     
     <nav class = "navbar navbar-default navbar-fixed-top navbar-transparent">
       <div class = "container">
-        <%= link_to root_path do %>
+        <!--ここのリンクはもともと初期画面へのもの(root_path)だったが、home画面へのリンクに変更。ログインしているか否かでリンクを変える処理が今後必要となる。-->
+        <%= link_to home_path do %> 
           <span><%= image_tag "Homeware And Living Logo.jpg" %></span>
         <% end %>
         
         <ul class = "nav navbar-nav navbar-right">
           <% if logged_in? %>
-            <li>
-               ログイン中のユーザー: <%= @current_user.name %>
-            </li>
+            <!--<li>-->
+            <!--   ログイン中のユーザー: <%#= @current_user.name %>-->
+            <!--</li>-->
             <li>
               <%= link_to logout_path, method: :delete do %>
                 <%= image_tag "logout.png" ,class:"logout"%>
