@@ -68,6 +68,7 @@
 .work_index{
   height:550px;
   background-color:#fff;
+  margin-top:10px;
   // padding-top:10px;
   
   .work_title{
@@ -83,6 +84,8 @@
 .work_chart{
   height:550px;
   background-color:#fff;
+  margin-top:10px;
+  
   
   .work_title2{
     padding:10px;
@@ -94,4 +97,23 @@
   }
   
   
+}
+
+.btn-add{
+  color:black;
+  border: 1px solid #fff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 20px;
+  background-color:lightcyan;
+  
+//   &:hover{
+//     color:#fff;
+//   }
+  }
+
+.btn-add:hover{
+  color:#fff;
+  background-color:#7bdae8;
+  // opacity:0.3;
 }
