@@ -42,9 +42,7 @@
   //   color:#fff !important;
   
   
-  .container{
-    margin-left:0px;
-  }
+  
   
   
   .navbar-brand{
@@ -60,7 +58,10 @@
   
   .logout{
     height:30px;
+    margin-right:20px;
   }
   
- 
+ .navbar-right{
+   margin-right:20px;
+ }
 }

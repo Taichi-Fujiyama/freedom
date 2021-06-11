@@ -1,79 +1,92 @@
-<!DOCTYPE html>
-<html>
-  <head>
-     <!--円グラフ導入にために、chart.jsを読み込む-->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js" type="text/javascript"></script>
-  </head>
-  
-  <body>
-    <div class = "home-wrapper">
-      <div class = "container">
-        <div class = "row">
-          <div class = "col-md-7 user_information">
-            <ul class = "user_status">
-        　     <% if logged_in? %>
-                <li class = "current_user_name">
-                 ログイン中のユーザー: <%= @current_user.name %>
-                </li>
-                <li class = "user_level">
-             　   user_level：
-                </li>
-              <% end %>
+<div class = "home-wrapper">
+  <div class = "container">
+    <div class = "row">
+      <div class = "col-md-7 user_information">
+        <ul class = "user_status">
+    　     <% if logged_in? %>
+            <li class = "current_user_name">
+             ユーザー名: <%= @current_user.name %>
+            </li>
+            <li class = "user_level">
+         　   user_level：
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class = "col-md-1"></div>
+      <div class = "col-md-4 add_work_btn">
+        <%= link_to "業務を追加","#",class:'btn btn-block btn-add' %>
+      </div>
+      <!--<p class = "col-md-4 add_work_btn">業務追加</p>-->
+      
+      
+      <div class = "row">
+        <div class = "col-md-7 work_index">
+          <p class = "work_title">業務一覧</p>
+          <div class = "work_index_space"></div>
+        </div>
+       
+        <div class = "col-md-5 work_chart">
+          <p class = "work_title2">業務状況</p>
+          <div class = "pie_chart">
+            <!--ここに円グラフを入れ込みたいので、canvasを記述する-->
+            <!--以下はjsのコードを参照するためにメンターに教えて頂いた内容。①inputタグを作成する。-->
+            <!--この時、type="hidden",idは任意のものを作成、valueはposts#indexで変数にしたいものとする-->
+            <!--value で定義した@○○をposts#indexでも定義して、任意の数値を代入する-->
+            <input type="hidden" id="complete" value=<%= @complete %>> <!--完了の数値-->
+            <input type="hidden" id="in_progress" value=<%= @in_progress %>> <!--対応中の数値-->
+            <input type="hidden" id="not_yet" value=<%= @not_yet %>> <!--未対応の数値-->
+            <canvas id="graph-area" height="250" width="300"></canvas>
+            <!--ここまでが円グラフの数値とグラフの大きさに関するコード-->
+            
+          </div>
+          <div class = "work_status_info">
+            <ul　class ="work_status_info_item">
+              <!--円グラフの凡例としてリストを使用したいため、idを追記（posts#indexで定義するものと同じ名前にする）。posts#indexで定義した内容を表示するために＜％＞で括る-->
+              <li class ="situation" id = "complete_per" >完了： <%=@complete_per%> ％</li>
+              <li class = "situation" id = "in_progress_per">対応中：<%=@in_progress_per%>  %</li>
+              <li class = "situation" id = "not_yet_per">未対応：<%=@not_yet_per%>  %</li>
             </ul>
           </div>
-          <div class = "col-md-1"></div>
-          <div class = "col-md-4 add_work_btn">
-            <%= link_to "業務を追加","#",class:'btn btn-block btn-add' %>
-          </div>
-          <!--<p class = "col-md-4 add_work_btn">業務追加</p>-->
-          
-          
-          <div class = "row">
-            <div class = "col-md-7 work_index">
-              <p class = "work_title">業務一覧</p>
-            </div>
-            <div class = "col-md-5 work_chart">
-              <p class = "work_title2">業務状況</p>
-              <div class = "pie_chart">
-                <!--ここに円グラフを入れ込みたいので、canvasを記述する-->
-                <canvas id="graph-area" height="250" width="300"></canvas>
-                <script type="text/javascript">
-                    // ▼グラフの中身
-                    var pieData = [
-                      {
-                       value: 240,            // 値
-                       color:"#F7464A",       // 色
-                       highlight: "#FF5A5E",  // マウスが載った際の色
-                       label: "完了"        // ラベル
-                      },
-                      {
-                       value: 50,
-                       color: "#41C44E",
-                       highlight: "#6CD173",
-                       label: "対応中"
-                      },
-                      {
-                       value: 100,
-                       color: "#FDB45C",
-                       highlight: "#FFC870",
-                       label: "未対応"
-                      }
-                    ];
-                     // ↓グラフを描画するための記述
-                     window.onload = function(){
-                     var ctx = document.getElementById("graph-area").getContext("2d");
-                     window.myPie = new Chart(ctx).Pie(pieData);
-                     };
-                </script>
-                <!--ここまでコードを追加-->
-                
-              </div>
-              <div class = "work_status_info"></div>
-            </div>
-          </div>
-          
         </div>
       </div>
+      
     </div>
-  </body>
-</html>
+  </div>
+</div>
+
+
+<!--<script></script>は基本的にはどこに記載しても問題はないので、最後か別のファイルにコードを記載する。そうすることで、可読性が上がるとともに、ロード時間が短くなる -->
+<script type="text/javascript">
+  //以下は、inputタグの値を取得するためのjsのコード
+  var complete = document.getElementById("complete").value;
+  var in_progress = document.getElementById("in_progress").value;
+  var not_yet = document.getElementById("not_yet").value;
+  //ここまでがinputタグを参照するためのコード
+
+  var pieData = [
+    {
+     value: complete,            // 値　※input_hiddenタグのvalueに合わせる
+     color:"palegreen",       // 色
+     highlight: "lightgreen",  // マウスが載った際の色
+     label: "完了"        // ラベル
+    },
+    {
+     value: in_progress,
+     color: "lemonchiffon",
+     highlight: "yellow",
+     label: "対応中"
+    },
+    {
+     value: not_yet,
+     color: "lightpink",
+     highlight: "red",
+     label: "未対応"
+    }
+  ];
+   // ↓グラフを描画するための記述
+   window.onload = function(){
+   var ctx = document.getElementById("graph-area").getContext("2d");
+   window.myPie = new Chart(ctx).Pie(pieData);
+   };
+</script>

@@ -7,6 +7,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js" type="text/javascript"></script>
+
   </head>
 
   <body>
@@ -23,9 +25,9 @@
         
         <ul class = "nav navbar-nav navbar-right">
           <% if logged_in? %>
-            <!--<li>-->
-            <!--   ログイン中のユーザー: <%#= @current_user.name %>-->
-            <!--</li>-->
+            <li class = "nav-info">
+              ログイン中のユーザー: <%= @current_user.name %>
+            </li>
             <li>
               <%= link_to logout_path, method: :delete do %>
                 <%= image_tag "logout.png" ,class:"logout"%>

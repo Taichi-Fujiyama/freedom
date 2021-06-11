@@ -32,7 +32,7 @@
     .current_user_name{
       padding:10px;
       background-color:lightcyan;
-      margin-right:50px;
+      margin-right:100px;
       margin-left:15px;
       font-size:20px;
     }
@@ -47,6 +47,7 @@
   
   .user_status li{
     float:left;
+    font-weight:bold;
   }
 }
 
@@ -72,15 +73,25 @@
   // padding-top:10px;
   
   .work_title{
-    padding:10px;
+    padding:10px 30px;
     background-color:lightcyan;
     margin-top:10px;
-    margin-left:15px;
+    margin-left:30px;
     font-size:20px;
+    font-weight:bold;
     width:150px;
+    
+    
   }
+   .work_index_space{
+    background-color:whitesmoke;
+    height:435px;
+    margin-left:30px;
+   }
 }
 
+
+   
 .work_chart{
   height:550px;
   background-color:#fff;
@@ -88,11 +99,12 @@
   
   
   .work_title2{
-    padding:10px;
+    padding:10px 30px;
     background-color:lightcyan;
     margin-top:10px;
     margin-left:15px;
     font-size:20px;
+    font-weight:bold;
     width:150px;
   }
   
@@ -123,3 +135,24 @@
   margin-top:20px;
   margin-left:20px;
 }
+
+.work_status_info{
+  margin-top:20px;
+  margin-left:20px;
+  height:150px;
+  width:300px;
+  background-color:whitesmoke;
+}
+
+.work_status_info li{
+  font-size:15px;
+  font-weight:bold;
+  list-style: none;
+  margin-left:90px;
+  padding-top:20px;
+}
+
+// .work_title{
+//   font-weight:bold;
+// }
+
