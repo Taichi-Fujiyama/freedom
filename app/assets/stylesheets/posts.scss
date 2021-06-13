@@ -87,6 +87,7 @@
     background-color:whitesmoke;
     height:435px;
     margin-left:30px;
+    padding-top:20px;
    }
 }
 
@@ -156,3 +157,36 @@
 //   font-weight:bold;
 // }
 
+.each_work{
+  background-color:#fff;
+  width:200px;
+  // margin-top:50px;
+  margin-left:20px;
+  text-align:center;
+  
+  
+ 
+}
+
+.work_info{
+  list-style:none;
+  float:left;
+  padding-right:9vw;
+  margin-left:2vw;
+  text-align:center;
+  font-weight:bold;
+}
+
+.btn-work_desc{
+  margin-top:5px;
+  color:black;
+  border:1px solid black;
+  font-size:10px;
+  background-color:#fff;
+  width:15vw;
+  
+  &:hover{
+    color:black;
+    background-color:#CCFFFF;
+  }
+}

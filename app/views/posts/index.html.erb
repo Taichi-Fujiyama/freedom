@@ -23,7 +23,20 @@
       <div class = "row">
         <div class = "col-md-7 work_index">
           <p class = "work_title">業務一覧</p>
-          <div class = "work_index_space"></div>
+          <div class = "work_index_space">
+            <!--業務の一覧表示をするためのコード-->
+            <div class = "work_index_title">
+              <ul class = each_work_title>
+                <li class = "work_info text_1">タイトル</li>
+                <li class = "work_info">進捗状況</li>
+              </ul>
+              
+              <% @posts.each do |post| %>
+              　<!--各業務で改行をさせるため、<p>タグを使って改行する-->
+                 <p  class= "each_work"> <%= link_to post.title,"#",class:'btn btn-block btn-work_desc' %> </p>
+              <% end %>
+            </div>
+          </div>
         </div>
        
         <div class = "col-md-5 work_chart">
