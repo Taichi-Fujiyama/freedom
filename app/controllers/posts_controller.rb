@@ -7,9 +7,11 @@ class PostsController < ApplicationController
   
   def index
     #間に合わせの各業務ステータスの値
-    @complete = 0
-    @in_progress = 0
-    @not_yet = 2
+    Post.group(:status).count
+    
+    @complete = Post.where(status:"1").count
+    @in_progress = Post.where(status:"2").count
+    @not_yet = Post.where(status:"3").count
     # 以下は、円グラフの凡例を導入するためのコード
     sum = @complete + @in_progress + @not_yet
     @complete_per = sprintf("%.1f",@complete/sum.to_f * 100)
