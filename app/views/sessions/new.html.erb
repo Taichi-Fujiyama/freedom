@@ -1,18 +1,18 @@
 <!--login画面はsessionを用いて管理するため、sessionsコントローラとする-->
-<div class = "users-new-wrapper">
-  <div class = "container">
-    <div class = "row">
-      <div class = "col-md-offset-4 col-md-4 users-new-container">
-        <h1 class = "text-center text-white">Log in</h1>
+<div class="users-new-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-4 col-md-4 users-new-container">
+        <h1 class="text-center text-white">Log in</h1>
       
         <!--form_forのHTTPメソッドはデフォルトでPOSTになっているため、リンクを指定して他のページに飛ばしたい場合はmethod: :getとして変える必要があった-->
         <%= form_for :sessions,url: login_path do |f| %>
-          <div class = "form-group">
+          <div class="form-group">
             <%= f.label :email,class:"text-white" %>
             <%= f.text_field :email,class:"form-control" %>
           </div>
           
-          <div class = "form-group">
+          <div class="form-group">
             <%= f.label :password,class:"text-white" %>
             <%= f.password_field :password,class:"form-control" %>
           </div>

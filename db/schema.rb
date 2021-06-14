@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 2021_06_06_023301) do
     t.datetime "updated_at", null: false
     t.string "URL"
     t.integer "appointed_user_id"
-    t.string "status"
-    t.string "priority"
+    t.string "status", default: "3", null: false
+    t.string "priority", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

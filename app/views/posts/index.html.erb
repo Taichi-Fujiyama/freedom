@@ -1,47 +1,50 @@
-<div class = "home-wrapper">
-  <div class = "container">
-    <div class = "row">
-      <div class = "col-md-7 user_information">
-        <ul class = "user_status">
+<div class="home-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 user_information">
+        <ul class="user_status">
     　     <% if logged_in? %>
-            <li class = "current_user_name">
+            <li class="current_user_name">
              ユーザー名: <%= @current_user.name %>
             </li>
-            <li class = "user_level">
+            <li class="user_level">
          　   user_level：
             </li>
           <% end %>
         </ul>
       </div>
-      <div class = "col-md-1"></div>
-      <div class = "col-md-4 add_work_btn">
+      <div class="col-md-1"></div>
+      <div class="col-md-4 add_work_btn">
         <%= link_to "業務を追加","#",class:'btn btn-block btn-add' %>
       </div>
       <!--<p class = "col-md-4 add_work_btn">業務追加</p>-->
       
       
-      <div class = "row">
-        <div class = "col-md-7 work_index">
-          <p class = "work_title">業務一覧</p>
-          <div class = "work_index_space">
+      <div class="row">
+        <div class="col-md-7 work_index">
+          <p class="work_title">業務一覧</p>
+          <div class="work_index_space">
             <!--業務の一覧表示をするためのコード-->
-            <div class = "work_index_title">
-              <ul class = each_work_title>
-                <li class = "work_info text_1">タイトル</li>
-                <li class = "work_info">進捗状況</li>
+            <div class="work_index_title">
+              <ul class="each_work_title">
+                <li class="col-md-5 work_info text_1">タイトル</li>
+                <li class ="col-md-5 work_info">進捗状況</li>
               </ul>
               
               <% @posts.each do |post| %>
               　<!--各業務で改行をさせるため、<p>タグを使って改行する-->
-                 <p  class= "each_work"> <%= link_to post.title,"#",class:'btn btn-block btn-work_desc' %> </p>
+                <ul class="gyoumu">
+                  <li class="col-md-5  each_work"> <%= link_to post.title,"#",class:'btn btn-block btn-work_desc' %> </li>
+                  <li class="col-md-5 work_status_name"><%= Code.status(post.status).name %></li>
+                </ul>
               <% end %>
             </div>
           </div>
         </div>
        
-        <div class = "col-md-5 work_chart">
-          <p class = "work_title2">業務状況</p>
-          <div class = "pie_chart">
+        <div class="col-md-5 work_chart">
+          <p class="work_title2">業務状況</p>
+          <div class="pie_chart">
             <!--ここに円グラフを入れ込みたいので、canvasを記述する-->
             <!--以下はjsのコードを参照するためにメンターに教えて頂いた内容。①inputタグを作成する。-->
             <!--この時、type="hidden",idは任意のものを作成、valueはposts#indexで変数にしたいものとする-->
@@ -53,12 +56,12 @@
             <!--ここまでが円グラフの数値とグラフの大きさに関するコード-->
             
           </div>
-          <div class = "work_status_info">
-            <ul　class ="work_status_info_item">
+          <div class="work_status_info">
+            <ul　class="work_status_info_item">
               <!--円グラフの凡例としてリストを使用したいため、idを追記（posts#indexで定義するものと同じ名前にする）。posts#indexで定義した内容を表示するために＜％＞で括る-->
-              <li class ="situation" id = "complete_per" >完了： <%=@complete_per%> ％</li>
-              <li class = "situation" id = "in_progress_per">対応中：<%=@in_progress_per%>  %</li>
-              <li class = "situation" id = "not_yet_per">未対応：<%=@not_yet_per%>  %</li>
+              <li class="situation" id="complete_per" >完了： <%=@complete_per%> ％</li>
+              <li class= "situation" id="in_progress_per">対応中：<%=@in_progress_per%>  %</li>
+              <li class= "situation" id="not_yet_per">未対応：<%=@not_yet_per%>  %</li>
             </ul>
           </div>
         </div>
@@ -72,9 +75,9 @@
 <!--<script></script>は基本的にはどこに記載しても問題はないので、最後か別のファイルにコードを記載する。そうすることで、可読性が上がるとともに、ロード時間が短くなる -->
 <script type="text/javascript">
   //以下は、inputタグの値を取得するためのjsのコード
-  var complete = document.getElementById("complete").value;
-  var in_progress = document.getElementById("in_progress").value;
-  var not_yet = document.getElementById("not_yet").value;
+  var complete=document.getElementById("complete").value;
+  var in_progress=document.getElementById("in_progress").value;
+  var not_yet=document.getElementById("not_yet").value;
   //ここまでがinputタグを参照するためのコード
 
   var pieData = [
@@ -98,8 +101,8 @@
     }
   ];
    // ↓グラフを描画するための記述
-   window.onload = function(){
-   var ctx = document.getElementById("graph-area").getContext("2d");
-   window.myPie = new Chart(ctx).Pie(pieData);
+   window.onload=function(){
+   var ctx=document.getElementById("graph-area").getContext("2d");
+   window.myPie=new Chart(ctx).Pie(pieData);
    };
 </script>

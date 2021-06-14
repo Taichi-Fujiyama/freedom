@@ -16,16 +16,16 @@
       <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
     <% end %>
     
-    <nav class = "navbar navbar-default navbar-fixed-top navbar-transparent">
-      <div class = "container">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
+      <div class="container">
         <!--ここのリンクはもともと初期画面へのもの(root_path)だったが、home画面へのリンクに変更。ログインしているか否かでリンクを変える処理が今後必要となる。-->
         <%= link_to home_path do %> 
           <span><%= image_tag "Homeware And Living Logo.jpg" %></span>
         <% end %>
         
-        <ul class = "nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
-            <li class = "nav-info">
+            <li class="nav-info">
               ログイン中のユーザー: <%= @current_user.name %>
             </li>
             <li>
