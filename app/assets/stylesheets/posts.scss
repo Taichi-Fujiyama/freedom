@@ -209,3 +209,37 @@
   padding-left:3.4vw;
   
 }
+
+
+.home-wrapper-for-add{
+  width:100vp;
+  height:100vh;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-size:cover;
+  background-color:#E6FFE9;
+}
+
+.work_title_info{
+  color:black;
+  margin-top:8vh;
+  margin-bottom:2vh;
+}
+
+.work_description{
+  height:25vh;
+}
+
+.btn-add-work{
+  margin-top:5px;
+  color:black;
+  border:1px solid black;
+  background-color:#fff;
+  height:6vh;
+  
+  &:hover{
+    color:black;
+    background-color:#CCFFFF;
+  }
+}

@@ -15,7 +15,7 @@
       </div>
       <div class="col-md-1"></div>
       <div class="col-md-4 add_work_btn">
-        <%= link_to "業務を追加","#",class:'btn btn-block btn-add' %>
+        <%= link_to "業務を追加",new_post_path,class:'btn btn-block btn-add' %>
       </div>
       <!--<p class = "col-md-4 add_work_btn">業務追加</p>-->
       
@@ -36,6 +36,7 @@
                 <ul class="gyoumu">
                   <li class="col-md-5  each_work"> <%= link_to post.title,"#",class:'btn btn-block btn-work_desc' %> </li>
                   <li class="col-md-5 work_status_name"><%= Code.status(post.status).name %></li>
+                  <!--後に提出期限も進捗状況の隣に表示したい-->
                 </ul>
               <% end %>
             </div>

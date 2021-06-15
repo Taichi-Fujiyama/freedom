@@ -1,0 +1,51 @@
+<div class="home-wrapper-for-add">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="background">
+          <h4 class="work_title_info">業務を追加する</h4>
+          <div class="form-group">
+            <%= form_for @post do |f| %>
+              <%= f.label :title,"タイトル" %>
+              <%= f.text_field :title,class:"form-control"%>
+            <% end %>
+          </div>
+          
+          <%= form_for @post do |f| %>
+            <div class="form-group">
+              <%= f.label :description,"詳細(業務内容)" %>
+              <%= f.text_field :description,class:"form-control work_description"%>
+            </div>
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <%= f.label :work_hour,"作業想定時間" %>
+                <%= f.text_field :work_hour,class:"form-control work_hour" %>
+              </div>
+              <div class="col-md-6  form-group">
+                <%= f.label :due_date,"提出期限" %>
+                <%= f.datetime_field :title,class:"form-control"%>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <%= f.label :priority,"優先度" %>
+                <%= f.select :priority,{"高":4,"中":5,"低":6,},{include_blank:"選択してください"},{class:"form-control"} %>
+              </div>
+              <div class="col-md-6 form-group">
+                <%= f.label :appointed_user_id,"担当者" %>
+                <%= f.search_field :appointed_user_id,class:"form-control"%>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-offset-9 col-md-3 add-btn-location">
+                <%= f.submit "業務を追加する",class:'btn btn-block btn-add-work' %>
+              </div>
+            </div> 
+          <% end %>
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
