@@ -13,33 +13,36 @@
             
             <div class="form-group">
               <%= f.label :description,"業務詳細(必須)" %>
-              <%= f.text_area :description, size:"20vw x 10vh",class:"form-control" %>
+              <%= f.text_area :description, size:"20vw x 10vh",class:"form-control"%>
             </div>
             
             <div class="row">
-              <div class="col-md-6 form-group">
+              <div class="col-md-1 form-group">
                 <%= f.label :work_hour,"作業想定時間" %>
-                <%= f.text_field :work_hour,class:"form-control work_hour" %>
+                <%= f.number_field	:work_hour,class:"form-control work_hour"%>
               </div>
-              <div class="col-md-6  form-group">
+               <div class="col-md-1 form-group">
+              　<%= f.label :work_hour,"時間",class:"time-label"%>
+              </div>
+              <div class="col-md-offset-4 col-md-5 form-group">
                 <%= f.label :due_date,"提出期限" %>
-                <%= f.datetime_field :due_date,class:"form-control"%>
+                <%= f.datetime_field :due_date,class:"form-control" %> 
               </div>
             </div>
             
             <div class="row">
-              <div class="col-md-6 form-group">
+              <div class="col-md-5 form-group">
                 <%= f.label :priority,"優先度(必須）" %>
                 <%= f.select :priority,{"高":4,"中":5,"低":6,},{include_blank:"選択してください"},{class:"form-control"} %>
               </div>
-              <div class="col-md-6 form-group">
+              <div class="col-md-offset-1 col-md-5 form-group">
                 <%= f.label :appointed_user_id,"担当者" %>
                 <%= f.search_field :appointed_user_id,class:"form-control"%>
               </div>
             </div>
             <div class="row">
               <div class="col-md-offset-9 col-md-3 add-btn-location">
-                <%= f.submit "業務を追加する",class:'btn btn-block btn-add-work' %>
+                <%= f.submit "業務を追加する",class:"btn btn-block btn-add-work" %>
               </div>
             </div> 
           <% end %>
