@@ -9,18 +9,27 @@ class PostsController < ApplicationController
     #間に合わせの各業務ステータスの値
     Post.group(:status).count
     
-    @complete = Post.where(status:"1").count
-    @in_progress = Post.where(status:"2").count
-    @not_yet = Post.where(status:"3").count
+    #以下のコードは、当初Post.where(status:"1",appointed_user_id: current_user.id).countとしていた。これでは、担当者の各ステータスが取得できないでので、appointed_user_idに修正
+    @complete = Post.where(status:"1",appointed_user_id: current_user.id).count
+    @in_progress = Post.where(status:"2",appointed_user_id: current_user.id).count
+    @not_yet = Post.where(status:"3",appointed_user_id: current_user.id).count
+    
     
     # 以下は、円グラフの凡例を導入するためのコード
     sum = @complete + @in_progress + @not_yet
-    @complete_per = sprintf("%.1f",@complete/sum.to_f * 100)
-    @in_progress_per = sprintf("%.1f",@in_progress/sum.to_f * 100)
-    @not_yet_per = sprintf("%.1f",@not_yet/sum.to_f * 100)
-    #追加した業務を一覧で表示するためのコード
-    @posts = Post.all
+    if sum == 0
+       @complete_per = sprintf("%.1f",0)
+       @in_progress_per = sprintf("%.1f",0)
+       @not_yet_per = sprintf("%.1f",0)
+    else 
+      @complete_per = sprintf("%.1f",@complete/sum.to_f * 100)
+      @in_progress_per = sprintf("%.1f",@in_progress/sum.to_f * 100)
+      @not_yet_per = sprintf("%.1f",@not_yet/sum.to_f * 100)
+    end
     
+    @posts = Post.where(appointed_user_id: current_user.id)
+    #上記コードは、当初where(user_id: current_user.id)としていた。しかし、これだとuser_idの値つまり、ログイン中のユーザーhomeに業務が追加されてしまうので、修正した。
+    #追加した業務をユーザ別に一覧で表示するためのコード。Post.allとすると、全てのユーザーの　post内容が表示されてしまう。
   end
   
   #投稿の追加に関するコントローラーを設定する
@@ -44,7 +53,7 @@ class PostsController < ApplicationController
      if @post.save 
        redirect_to home_path, success:"業務を追加しました。"
      else
-       flash.now[:danger] = "業務を追加できませんでした。タイトルと業務内容、優先度は必ず記入してください。"
+       flash.now[:danger] = "業務を追加できませんでした。タイトルと業務内容、優先度、担当者は必ず記入してください。"
        render :new 
      end
   end

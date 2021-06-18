@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
+    # 担当者が選択できるように、以下のコードを追加
+    # @user = User.all
   end
+
   
   def create
      @user = User.new(user_params)

@@ -35,10 +35,16 @@
                 <%= f.label :priority,"優先度(必須）" %>
                 <%= f.select :priority,{"高":4,"中":5,"低":6,},{include_blank:"選択してください"},{class:"form-control"} %>
               </div>
+              
+              <!--担当者はf.selectを用いて当てる様にする-->
               <div class="col-md-offset-1 col-md-5 form-group">
-                <%= f.label :appointed_user_id,"担当者" %>
-                <%= f.search_field :appointed_user_id,class:"form-control"%>
+                <%= f.label :appointed_user_id,"担当者(必須）" %>
+                <%= f.collection_select :appointed_user_id, User.all ,:id,:name,{include_blank:"選択してください"},{class:"form-control"}%>
+                <!--<%#= f.collection_select :user_id, @user ,:id,:name,include_blank:true %>としていたが、undefined method `map' for nil:NilClass が発生するエラーが出たので、サイトを参照-->
+                <!--users_controllerのdef newの部分に@user = User.allを追加。f.collection_selectの要素の配列部分に@userではなく、User.allを追加したら動いた。-->
+                <!--カラム名が本来は:appointed_user_idになるはずが、:user_idとなっていた。そのため、ユーザーを選択しても指定したユーザーのhome画面に業務が追加されなかった。-->
               </div>
+              
             </div>
             <div class="row">
               <div class="col-md-offset-9 col-md-3 add-btn-location">
@@ -46,7 +52,6 @@
               </div>
             </div> 
           <% end %>
-          
           
         </div>
       </div>
