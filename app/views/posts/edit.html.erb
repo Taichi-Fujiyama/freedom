@@ -1,0 +1,37 @@
+<div class="home-wrapper-for-add">
+  <div class="container">
+      <div class= "row">
+        <div class="col-md-12">
+        　<div class="background">
+          　<h4 class="added_user_name">
+              業務登録者：<%= @post_created_user %>
+          　</h4>
+          　 <div class="row">
+                <%= form_for @post do |f| %>
+                  <div class="form-group">
+                    <%= f.label :description,"業務詳細" %>
+                    <%= f.text_area :description, size:"20vw x 10vh",class:"form-control"%>
+                  </div>
+                  <p class="form-group">
+                    <%= f.label :work_hour,"作業想定時間" %> : <%= @post.work_hour %>　<%= f.label :work_hour,"時間" %>
+                  </p>
+                  <div class="form-group">
+                    <%= f.label :URL,"成果物URL(データファイルのURLを添付してください)"%>
+                    <%= f.url_field :URL,class:"form-control"%>
+                  </div>
+                  <div class="col-md-5 form-group">
+                    <%= f.label :status,"進捗状況" %>
+                    <%= f.select :status,{"完了":1,"対応中":2,"未対応":3,},{size:"15vw x 5vh"},{class:"form-control"} %>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-offset-10 col-md-2 add-btn-location">
+                      <%= f.submit "編集を完了する",class:"btn btn-block btn-add-work" %>
+                    </div>
+                  </div>
+                <% end %>
+          　 </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

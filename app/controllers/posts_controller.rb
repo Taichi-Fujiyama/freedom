@@ -10,10 +10,11 @@ class PostsController < ApplicationController
     Post.group(:status).count
     
     #以下のコードは、当初Post.where(status:"1",appointed_user_id: current_user.id).countとしていた。これでは、担当者の各ステータスが取得できないでので、appointed_user_idに修正
-    @complete = Post.where(status:"1",appointed_user_id: current_user.id).count
+    @complete = Post.where(status:"1",appointed_user_id: current_user.id).count 
     @in_progress = Post.where(status:"2",appointed_user_id: current_user.id).count
     @not_yet = Post.where(status:"3",appointed_user_id: current_user.id).count
-    
+    # 以下の書き方もある
+    # @complete = Post.where(status:"1").where(appointed_user_id: current_user.id).count 
     
     # 以下は、円グラフの凡例を導入するためのコード
     sum = @complete + @in_progress + @not_yet
@@ -22,9 +23,9 @@ class PostsController < ApplicationController
        @in_progress_per = sprintf("%.1f",0)
        @not_yet_per = sprintf("%.1f",0)
     else 
-      @complete_per = sprintf("%.1f",@complete/sum.to_f * 100)
-      @in_progress_per = sprintf("%.1f",@in_progress/sum.to_f * 100)
-      @not_yet_per = sprintf("%.1f",@not_yet/sum.to_f * 100)
+       @complete_per = sprintf("%.1f",@complete/sum.to_f * 100)
+       @in_progress_per = sprintf("%.1f",@in_progress/sum.to_f * 100)
+       @not_yet_per = sprintf("%.1f",@not_yet/sum.to_f * 100)
     end
     
     @posts = Post.where(appointed_user_id: current_user.id)
@@ -57,6 +58,17 @@ class PostsController < ApplicationController
        render :new 
      end
   end
+  
+  
+  def edit
+    @post = Post.new
+    # やりたいこと①：業務登録者の名前を表示したい（user_idとpost_idの取得）
+    # やりたいこと②：業務詳細の内容を初期値として、登録時のdescriptionの値を入れたい。そこから編集をして、変更も反映できる様にしたい。
+    
+    #今の段階では、あくまでもpostのidを特定したまで。それだけでは、ユーザーの名前を取得できないので、さらにuser_idの情報を取得して、postとuserの関連付けを行う。
+    # @post_created_user = Post.find(params[:id][:user_id])
+  end
+  
   
   private 
   def post_params

@@ -34,10 +34,10 @@
               <% @posts.each do |post| %>
               　<!--各業務で改行をさせるため、<p>タグを使って改行する-->
                 <ul class="gyoumu">
-                  <li class="col-md-5  each_work"> <%= link_to post.title,"#",class:'btn btn-block btn-work_desc' %> </li>
+                  <li class="col-md-5 each_work"> <%= link_to post.title,edit_post_path(post.id),class:'btn btn-block btn-work_desc' %> </li>
                   <li class="col-md-5 work_status_name"><%= Code.status(post.status).name %></li>
                   <!--後に提出期限も進捗状況の隣に表示したい-->
-                </ul>
+                </ul>  
               <% end %>
             </div>
           </div>

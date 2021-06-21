@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "home#top"
  
   get 'posts/create'
+  # post "/posts/:id/edit" => "posts#edit"
   # ホーム画面で業務を一覧表示させるため、indexアクションとする
   get  "/home" => "posts#index" 
   
