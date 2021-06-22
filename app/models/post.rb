@@ -5,6 +5,6 @@ class Post < ApplicationRecord
   
   belongs_to :user
   # appointed_user_idとappointed_userの関連付け
-  has_one :appointed_user,class_name: "User",foreign_key: :appointed_user_id
+  belongs_to :appointed_user, class_name: "User"
 end
  

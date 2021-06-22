@@ -61,18 +61,25 @@ class PostsController < ApplicationController
   
   
   def edit
-    @post = Post.new
-    # やりたいこと①：業務登録者の名前を表示したい（user_idとpost_idの取得）
-    # やりたいこと②：業務詳細の内容を初期値として、登録時のdescriptionの値を入れたい。そこから編集をして、変更も反映できる様にしたい。
-    
-    #今の段階では、あくまでもpostのidを特定したまで。それだけでは、ユーザーの名前を取得できないので、さらにuser_idの情報を取得して、postとuserの関連付けを行う。
-    # @post_created_user = Post.find(params[:id][:user_id])
+    #以下のように投稿を特定するためののコードを記載する。登録者の名前は直接edit.html.erbに直接記載している。
+    @post = Post.find(params[:id])
+    #sessionとparamsはハッシュの中でもparams[:id],session[:user_id]のように特殊な書き方をする.
   end
   
   
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    if @post.save
+      redirect_to posts_path,success: "業務を更新しました。"
+    end
+  end
+  
   private 
   def post_params
+    # requireのあとにはオブジェクト名シンボルとしてが来る。つまり、postテーブル。permitで取得できるカラム（キー)が指定されて、テーブル内の値がvalueとして取得できる。
     params.require(:post).permit(:title,:description,:work_hour,:due_date,:priority,:URL,:appointed_user_id)
   end
   
 end
+
