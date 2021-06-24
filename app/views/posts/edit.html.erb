@@ -9,19 +9,23 @@
           　 <div class="row">
                 <%= form_for @post ,url:{controller:"posts",action:"update",id: @post.id} do |f| %>
                   <div class="form-group">
-                    <%= f.label :description,"業務詳細" %>
+                    <%= f.label :description,"◆業務詳細" %>
                     <%= f.text_area :description, size:"20vw x 10vh",class:"form-control"%>
                   </div>
                   <p class="form-group">
-                    <%= f.label :work_hour,"作業想定時間" %> : <%= @post.work_hour %> <%= f.label :work_hour,"時間" %>
+                    <%= f.label :work_hour,"◆作業想定時間" %> : <%= @post.work_hour %> <%= f.label :work_hour,"時間" %>
+                  </p>
+                  <p class="form-group">
+                    <%= f.label :priority,"◆優先度" %> : <%= @post.priority %> 
                   </p>
                   <div class="form-group">
-                    <%= f.label :URL,"成果物URL(データファイルのURLを添付してください)"%>
+                    <%= f.label :URL,"◆成果物URL(データファイルのURLを添付してください)"%>
                     <%= f.url_field :URL,class:"form-control"%>
                   </div>
                   <div class="col-md-5 form-group">
-                    <%= f.label :status,"進捗状況" %>
-                    <%= f.select :status,{"完了":1,"対応中":2,"未対応":3,},{size:"15vw x 5vh"},{class:"form-control"} %>
+                    <%= f.label :status,"◆進捗状況" %>
+                    <%= f.collection_select :status,Code.status_select,:id,:name,{size:"15vw x 5vh"},{class:"form-control"} %>
+                   
                   </div>
                   <div class="row">
                     <div class="col-md-offset-10 col-md-2 add-btn-location">
@@ -29,6 +33,7 @@
                     </div>
                   </div>
                 <% end %>
+                
           　 </div>
           </div>
         </div>

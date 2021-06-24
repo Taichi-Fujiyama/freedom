@@ -70,15 +70,20 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
+    # @post.status = @post.status
+   
+    
     if @post.save
       redirect_to posts_path,success: "業務を更新しました。"
     end
   end
   
+  
   private 
   def post_params
     # requireのあとにはオブジェクト名シンボルとしてが来る。つまり、postテーブル。permitで取得できるカラム（キー)が指定されて、テーブル内の値がvalueとして取得できる。
-    params.require(:post).permit(:title,:description,:work_hour,:due_date,:priority,:URL,:appointed_user_id)
+    #permitのところで:statusを記載していなかったため、Code.status_selectをターミナルで実行してもstatusの値が取得できていなかった。
+    params.require(:post).permit(:title,:description,:work_hour,:due_date,:priority,:URL,:appointed_user_id,:status)
   end
   
 end
