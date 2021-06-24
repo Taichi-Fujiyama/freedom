@@ -16,7 +16,8 @@
                     <%= f.label :work_hour,"◆作業想定時間" %> : <%= @post.work_hour %> <%= f.label :work_hour,"時間" %>
                   </p>
                   <p class="form-group">
-                    <%= f.label :priority,"◆優先度" %> : <%= @post.priority %> 
+                    <%= f.label :priority,"◆優先度" %> : <%= Code.find(@post.priority).name %>
+                    <!--優先度は上記の内容で取り出す事ができた。Codeテーブル.find(@post.priority ※ポストテーブルの中のpriorityカラムの値という意味).name ※Codeテーブルのnameカラムの値-->
                   </p>
                   <div class="form-group">
                     <%= f.label :URL,"◆成果物URL(データファイルのURLを添付してください)"%>
@@ -25,7 +26,6 @@
                   <div class="col-md-5 form-group">
                     <%= f.label :status,"◆進捗状況" %>
                     <%= f.collection_select :status,Code.status_select,:id,:name,{size:"15vw x 5vh"},{class:"form-control"} %>
-                   
                   </div>
                   <div class="row">
                     <div class="col-md-offset-10 col-md-2 add-btn-location">

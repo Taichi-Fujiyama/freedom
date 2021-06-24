@@ -1,6 +1,9 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+   background-color:#E6FFE9;
+}
 .row{
   margin:10px 0px;
 }
@@ -218,7 +221,7 @@
   background-repeat:no-repeat;
   background-attachment:fixed;
   background-size:cover;
-  background-color:#E6FFE9;
+  // background-color:#E6FFE9;
 }
 
 .work_title_info{
