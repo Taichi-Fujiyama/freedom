@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 8, maximum: 32}, format: { with: /\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[\d])\w{8,32}\z/}
   
   has_secure_password
- 
+  has_many :posts
   
 end
 
