@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   
   def index
     #間に合わせの各業務ステータスの値
-    Post.group(:status).count
+    # Post.group(:status).count
     
     #以下のコードは、当初Post.where(status:"1",appointed_user_id: current_user.id).countとしていた。これでは、担当者の各ステータスが取得できないでので、appointed_user_idに修正
     @complete = Post.where(status:"1",appointed_user_id: current_user.id).count 
@@ -54,7 +54,7 @@ class PostsController < ApplicationController
      if @post.save 
        redirect_to home_path, success:"業務を追加しました。"
      else
-       flash.now[:danger] = "業務を追加できませんでした。タイトルと業務内容、優先度、担当者は必ず記入してください。"
+       flash.now[:danger] = "業務を追加できませんでした。必須項目は必ず記入してください。"
        render :new 
      end
   end
