@@ -28,15 +28,14 @@
 }
 
 .alert{
-  margin-bottom:0px;
   position:fixed;
   width:100%;
   z-index:10000;
-  height:60px;
+  height:8vh;
 }
 
 .navbar-transparent{
-  margin_bottom:0px;
+  // margin_bottom:0px;
   background-color:rgba(0,200,200,0.5);
   // a{
   //   color:#fff !important;
@@ -46,7 +45,7 @@
   
   
   .navbar-brand{
-    padding:0px;
+    // padding-top:3vh;
     margin-top:15px;
     margin-left:0px;
   }

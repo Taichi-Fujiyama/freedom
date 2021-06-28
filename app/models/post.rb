@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  validates :title, presence: true,length:{maximum:30}
+  validates :title, presence: true,length:{maximum:50}
   validates :description, presence: true
   validates :appointed_user_id,presence: true
   validates :due_date, presence: true
