@@ -35,8 +35,8 @@
               <% @posts.each do |post| %>
               　<!--各業務で改行をさせるため、<p>タグを使って改行する-->
                 <ul class="gyoumu"> 
-                  <li class="col-md-4 each_work"> <%= link_to post.title,edit_post_path(post.id),class:'btn btn-block btn-work_desc' %> </li>
-                  <li class="col-md-3 work_status_name"><%= Code.status(post.status).name %></li>
+                  <li class="col-md-4 each_work"> <%= link_to truncate(post.title,length:15),edit_post_path(post.id),class:'btn btn-block btn-work_desc' %> </li>
+                　<li class="col-md-3 work_status_name"><%= Code.status(post.status).name %></li>
                   <li class="col-md-4 work_due_date"><%= post.due_date.strftime("%Y年%m月%d日%-H時%-M分") %></li>
                 </ul>  
               <% end %>
