@@ -103,11 +103,11 @@
     }
   ];
    // ↓グラフを描画するための記述
-   window.onload=function(){
-   var ctx=document.getElementById("graph-area").getContext("2d");
-   window.myPie=new Chart(ctx).Pie(pieData);
-     responsive : true
-   };
+   $(document).on('turbolinks:load', function() { 
+     var ctx=document.getElementById("graph-area").getContext("2d");
+     window.myPie=new Chart(ctx).Pie(pieData);
+    // responsive : true
+    });
    
       // // Turbolinks によって画面が切り替わった場合.
       // $(document).bind("page:load", handler);

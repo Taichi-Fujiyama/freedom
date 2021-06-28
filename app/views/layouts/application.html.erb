@@ -5,10 +5,10 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_include_tag 'application' %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js" type="text/javascript"></script>
 
   </head>
@@ -21,8 +21,12 @@
     <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
       <div class="container">
         <!--ここのリンクはもともと初期画面へのもの(root_path)だったが、home画面へのリンクに変更。ログインしているか否かでリンクを変える処理が今後必要となる。-->
-        <%= link_to home_path do %> 
-          <span><%= image_tag "Homeware And Living Logo.jpg" %></span>
+        <% if logged_in? %>
+          <%= link_to home_path do %> 
+            <span><%= image_tag "Homeware And Living Logo.jpg" %></span>
+          <% end %>
+        <% else %>
+           <span><%= image_tag "Homeware And Living Logo.jpg" %></span>
         <% end %>
         
         <ul class="nav navbar-nav navbar-right">
