@@ -22,28 +22,26 @@ body{
 
 .user_information{
   
-  margin-top:90px;
+  margin-top:10vh;
   background-color:#fff;
-  padding:0px;
+  // padding:0px;
   
   .user_status{
-    height:90px;
+    height:6vw;
     list-style:none;
-    padding:30px;
+    padding-top:2.5vh;
     
     
     .current_user_name{
-      padding:10px;
-      background-color:lightcyan;
-      margin-right:100px;
-      margin-left:15px;
-      font-size:20px;
+      padding:2vh 2vw;
+      // background-color:lightcyan;
+      // margin-right:4vw;
+      font-size:23px;
     }
     
     .user_level{
-      padding:10px;
-      background-color:lightcyan;
-      margin-right:50px;
+      padding:2vh 1vw;
+      // background-color:lightcyan;
       font-size:20px;
     }
   }
@@ -55,7 +53,7 @@ body{
 }
 
 .add_work_btn{
-  margin-top:10vh;
+  margin-top:8vh;
   padding:4vh 4vw; 
   height:5vh;
   // background-color:#fff;
@@ -72,10 +70,9 @@ body{
   // padding-top:10px;
   
   .work_title{
-    padding:10px 30px;
-    background-color:lightcyan;
-    margin-top:10px;
-    margin-left:30px;
+    // background-color:lightcyan;
+    margin-top:3vh;
+    margin-left:3vw;
     font-size:20px;
     font-weight:bold;
     width:150px;
@@ -83,7 +80,7 @@ body{
     
   }
    .work_index_space{
-    background-color:whitesmoke;
+    background-color:#E6FFE9;
     height:435px;
     margin-left:30px;
     padding-top:20px;
@@ -99,10 +96,9 @@ body{
   
   
   .work_title2{
-    padding:10px 30px;
-    background-color:lightcyan;
-    margin-top:10px;
-    margin-left:15px;
+    // background-color:lightcyan;
+    margin-top:3vh;
+    margin-left:3vw;
     font-size:20px;
     font-weight:bold;
     width:150px;
@@ -114,10 +110,12 @@ body{
 .btn-add{
   color:black;
   border: 1px solid #fff;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
   font-size: 20px;
   background-color:lightcyan;
+  opacity:0.8;
+  
   
   
 //   &:hover{
@@ -137,20 +135,22 @@ body{
 }
 
 .work_status_info{
-  margin-top:20px;
-  margin-left:20px;
-  height:150px;
-  width:300px;
-  background-color:whitesmoke;
+  margin-top:2vh;
+  margin-left:5vw;
+  padding-top:1vh;
+  height:18.5vh;
+  width:20vw;
+  background-color:#F8F8FF;
 }
 
 .work_status_info li{
   font-size:15px;
   font-weight:bold;
   list-style: none;
-  margin-left:90px;
-  padding-top:20px;
+  margin-left:6vw;
+  padding-top:2vh;
 }
+
 
 // .work_title{
 //   font-weight:bold;
@@ -244,7 +244,7 @@ body{
 // }
 
 .btn-add-work{
-  margin-top:5px;
+  margin-top:1vh;
   color:black;
   border:1px solid black;
   background-color:#fff;
@@ -272,3 +272,14 @@ body{
   margin-top:4vh;
 }
 
+.cp{
+  color:green;
+}
+
+.ip{
+  color:#FFD700	;
+}
+
+.nyp{
+  color:red;
+}
