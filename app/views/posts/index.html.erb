@@ -61,7 +61,7 @@
           <div class="work_status_info">
             <ul　class="work_status_info_item">
               <!--円グラフの凡例としてリストを使用したいため、idを追記（posts#indexで定義するものと同じ名前にする）。posts#indexで定義した内容を表示するために＜％＞で括る-->
-              <li class="situation" id="complete_per" >完了： <%=@complete_per%> ％</li>
+              <li class="situation" id="complete_per" >  完了： <%=@complete_per%> ％</li>
               <li class= "situation" id="in_progress_per">対応中：<%=@in_progress_per%>  %</li>
               <li class= "situation" id="not_yet_per">未対応：<%=@not_yet_per%>  %</li>
             </ul>
@@ -108,4 +108,9 @@
    window.myPie=new Chart(ctx).Pie(pieData);
      responsive : true
    };
+   
+      // // Turbolinks によって画面が切り替わった場合.
+      // $(document).bind("page:load", handler);
+      // // ブラウザの戻るボタンで画面が切り替わった場合にも処理を行いたければ page:restore にも設定する.
+      // $(document).bind("page:restore", handler);
 </script>

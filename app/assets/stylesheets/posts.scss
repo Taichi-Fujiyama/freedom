@@ -179,6 +179,7 @@ body{
   text-align:center;
   font-weight:bold;
  
+ 
 }
 
 .btn-work_desc{
@@ -189,6 +190,7 @@ body{
   font-size:10px;
   background-color:#fff;
   width:13vw;
+  text-align:left;
   
   &:hover{
     color:black;
@@ -197,20 +199,17 @@ body{
 }
 
 .work_status_name{
-  // padding-left:3.5vw;
-  margin-top:0.7vw;
-  padding-left:3vw;
-  float:left;
+  text-align:center;
 }
 
 .work_due_date{
-  margin:0.7vw;
+  margin:0.1vh 0.4vw;
   padding:0;
   
 }
 
 .due_date_title{
-  margin-left:1.2vw;
+  margin-left:1vw;
 }
 
 .gyoumu{
@@ -219,8 +218,8 @@ body{
 }
 
 .text_1{
-  margin-left:0.5vw;
-  padding-left:1vw;
+  margin-right:0.5vw;
+   text-align:left;
   
 }
 
