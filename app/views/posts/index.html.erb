@@ -25,13 +25,12 @@
           <p class="work_title">◆業務一覧</p>
           <div class="work_index_space">
             <!--業務の一覧表示をするためのコード-->
-            <div class="work_index_title" style="height:435px;overflow:auto;">
+            <div class="work_index_title" style="height:52vh;overflow:auto;">
               <ul class="each_work_title">
                 <li class="col-md-4 work_info text_1">タイトル</li>
                 <li class ="col-md-3 work_info">進捗状況</li>
                 <li class="col-md-3 work_info due_date_title">提出期限</li> 
               </ul>
-              
               <% @posts.each do |post| %>
               　<!--各業務で改行をさせるため、<p>タグを使って改行する-->
                 <ul class="gyoumu"> 

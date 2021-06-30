@@ -23,10 +23,11 @@
         <!--ここのリンクはもともと初期画面へのもの(root_path)だったが、home画面へのリンクに変更。ログインしているか否かでリンクを変える処理が今後必要となる。-->
         <% if logged_in? %>
           <%= link_to home_path do %> 
-            <span><%= image_tag "Homeware And Living Logo.jpg" %></span>
+            <!--<span><%#= image_tag "Homeware And Living Logo.jpg" %></span>-->
+            <span><%= image_tag "freedom.logo.png" ,class:"freedom_logo"%></span>
           <% end %>
         <% else %>
-           <span><%= image_tag "Homeware And Living Logo.jpg" %></span>
+           <span><%= image_tag "freedom.logo.png",class:"freedom_logo" %></span>
         <% end %>
         
         <ul class="nav navbar-nav navbar-right">
