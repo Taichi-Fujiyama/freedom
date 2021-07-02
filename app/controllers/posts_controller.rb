@@ -69,8 +69,10 @@ class PostsController < ApplicationController
   
   def update
     @post = Post.find(params[:id])
-    user = @post.user
+    user = current_user
+    # user = @post.user 当初は左の様に書いていたが、これでは投稿したユーザーの情報を更新してしまうため、current_userに変更した。
     
+    # binding.pry
     
     # ifの引数のpost_paramsはストロングパラメーターのメソッド名で、そこでpermitしているものが入るイメージ
     # if @post.update(post_params)
