@@ -70,17 +70,42 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     user = @post.user
-
+    
+    
     # ifの引数のpost_paramsはストロングパラメーターのメソッド名で、そこでpermitしているものが入るイメージ
-    if @post.update(post_params)
-      if @post.status == "1"
-        user.post_comlete
-      end
+    # if @post.update(post_params)
+    #   if @post.status == "1"
+    #     user.post_comlete
+    #   end
 
-      redirect_to posts_path,success: "業務を更新しました。"
+    #   redirect_to posts_path,success: "業務を更新しました。"
+    # else
+    #   render :edit
+    # end
+    
+    if @post.status != "1" 
+      if @post.update(post_params)
+        if @post.status == "1"
+          user.post_comlete
+        end
+
+        redirect_to posts_path,success: "業務を更新しました。"
+      else
+        render :edit
+      end
+      
+    elsif @post.status == "1" 
+      @post.update(post_params)
+      if @post.status != "1"
+        user.post_change
+        redirect_to posts_path,success: "業務を更新しました。"
+      else 
+        redirect_to posts_path,success: "業務を更新しました。"
+      end
     else
       render :edit
     end
+    
   end
   
   

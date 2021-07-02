@@ -16,5 +16,11 @@ class User < ApplicationRecord
 
     self.save
   end
+  
+  def post_change
+    self.experience -= 1
+    self.save
+  end
+    
 end
 
