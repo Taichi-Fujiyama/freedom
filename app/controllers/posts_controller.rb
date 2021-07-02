@@ -69,12 +69,17 @@ class PostsController < ApplicationController
   
   def update
     @post = Post.find(params[:id])
-    @post.update(post_params)
-    # @post.status = @post.status
-   
-    
-    if @post.save
+    user = @post.user
+
+    # ifの引数のpost_paramsはストロングパラメーターのメソッド名で、そこでpermitしているものが入るイメージ
+    if @post.update(post_params)
+      if @post.status == "1"
+        user.post_comlete
+      end
+
       redirect_to posts_path,success: "業務を更新しました。"
+    else
+      render :edit
     end
   end
   
@@ -83,7 +88,7 @@ class PostsController < ApplicationController
   def post_params
     # requireのあとにはオブジェクト名シンボルとしてが来る。つまり、postテーブル。permitで取得できるカラム（キー)が指定されて、テーブル内の値がvalueとして取得できる。
     #permitのところで:statusを記載していなかったため、Code.status_selectをターミナルで実行してもstatusの値が取得できていなかった。
-    params.require(:post).permit(:title,:description,:work_hour,:due_date,:priority,:URL,:appointed_user_id,:status)
+    params.require(:post).permit(:title,:description,:work_hour,:due_date,:priority,:URL,:appointed_user_id,:status,:experience,:user_level)
   end
   
 end

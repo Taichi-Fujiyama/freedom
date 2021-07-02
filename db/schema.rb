@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_15_110518) do
+ActiveRecord::Schema.define(version: 2021_07_01_064528) do
 
   create_table "codes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "cd", null: false
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2021_06_15_110518) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "role", null: false
+    t.integer "experience", default: 0
+    t.integer "user_level", default: 1
   end
 
 end

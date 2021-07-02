@@ -4,11 +4,11 @@
       <div class="col-md-8 user_information">
         <ul class="user_status">
     　     <% if logged_in? %>
-            <li class="col-md-5 current_user_name">
+            <li class="col-md-6 current_user_name">
              ユーザー名: <%= @current_user.name %>
             </li>
-            <li class="col-md-offset-1 col-md-5 user_level">
-         　  ユーザーLv.
+            <li class="col-md-5 user_level">
+         　  ユーザーLv. <%= @current_user.user_level %>
             </li>
           <% end %>
         </ul>
