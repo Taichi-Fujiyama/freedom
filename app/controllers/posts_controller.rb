@@ -72,19 +72,6 @@ class PostsController < ApplicationController
     user = current_user
     # user = @post.user 当初は左の様に書いていたが、これでは投稿したユーザーの情報を更新してしまうため、current_userに変更した。
     
-    # binding.pry
-    
-    # ifの引数のpost_paramsはストロングパラメーターのメソッド名で、そこでpermitしているものが入るイメージ
-    # if @post.update(post_params)
-    #   if @post.status == "1"
-    #     user.post_comlete
-    #   end
-
-    #   redirect_to posts_path,success: "業務を更新しました。"
-    # else
-    #   render :edit
-    # end
-    
     if @post.status != "1" 
       if @post.update(post_params)
         if @post.status == "1"

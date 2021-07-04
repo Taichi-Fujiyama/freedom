@@ -1,9 +1,9 @@
 class User < ApplicationRecord
   validates:name, presence: true,length:{maximum:20}
   validates:email,presence: true,uniqueness: true,format:{with:/\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i}
-  validates :password, presence: true, length: { minimum: 8, maximum: 32}, format: { with: /\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[\d])\w{8,32}\z/}, on: :create
+  validates :password, presence: true, length: { minimum: 8, maximum: 32}, format: { with: /\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[\d])\w{8,32}\z/}
   
-  has_secure_password(validations: false)
+  has_secure_password
   has_many :posts
   
   def post_comlete
@@ -14,12 +14,12 @@ class User < ApplicationRecord
       self.experience = 0
     end
 
-    self.save
+    self.save(validate: false)
   end
   
   def post_change
     self.experience -= 1
-    self.save
+     self.save(validate: false)
   end
     
 end
