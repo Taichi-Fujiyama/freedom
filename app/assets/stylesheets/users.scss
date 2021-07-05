@@ -34,6 +34,20 @@
   height:8vh;
 }
 
+.alert-primary{
+  position:fixed;
+  top:33%;
+  left:33%;
+  height:40vh;  
+  z-index:10000;
+  font-size:30px;
+  background-image:url(freedom_flash.jpeg);
+  background-repeat: no-repeat;
+  padding:17vh 16vh;
+  font-family: "Gill Sans", sans-serif;
+}
+
+
 
 
 

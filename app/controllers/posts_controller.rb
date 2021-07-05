@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   #     user_id:@current_user.id
   #     )
   # end
+  attr_accessor:update
   
   def index
     #間に合わせの各業務ステータスの値
@@ -72,12 +73,20 @@ class PostsController < ApplicationController
     user = current_user
     # user = @post.user 当初は左の様に書いていたが、これでは投稿したユーザーの情報を更新してしまうため、current_userに変更した。
     
+    
+    # models/user.rbでユーザーに関するメソッドを定義していたが、ユーザーのレベルが上がった時のみにflashを個別で設定するために、レベルupに関するコードはここに記述することとする。
     if @post.status != "1" 
       if @post.update(post_params)
         if @post.status == "1"
-          user.post_comlete
+           if user.experience += 1
+             if user.experience == user.user_level
+               user.user_level += 1
+               user.experience = 0
+               flash[:primary] = "✨ Level Up!  Well done! ✨"
+             end
+           end
         end
-
+        user.save(validate: false)
         redirect_to posts_path,success: "業務を更新しました。"
       else
         render :edit
