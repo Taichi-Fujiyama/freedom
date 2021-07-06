@@ -62,7 +62,7 @@ body{
   height:550px;
   background-color:#fff;
   margin-top:10px;
-  
+     
   .work_title{
     margin-top:3vh;
     margin-left:3vw;
@@ -70,16 +70,22 @@ body{
     font-weight:bold;
     font-family: "Gill Sans", sans-serif;
   }
-  
-   .work_index_space{
+
+  .work_index_space{
     background-color:#E6FFE9;
     margin-left:3vw;
     padding-top:3vh;
-    height:55vh;
-   }
+  }
+   
+  ul.row {
+    padding: 0;
+  }
+
+  &_body {
+    height: 390px;
+    overflow: auto;
+  }
 }
-
-
    
 .work_chart{
   height:550px;
@@ -116,12 +122,11 @@ body{
 
 .pie_chart{
   margin-top:20px;
-  margin-left:20px;
+  text-align: center;
 }
 
 .work_status_info{
-  margin-top:2vh;
-  margin-left:5vw;
+  margin: 2vh auto 0;
   padding-top:1vh;
   height:18.5vh;
   width:20vw;
@@ -138,10 +143,9 @@ body{
 
 .each_work{
   // width:200px;
-  margin-left:0.5vw;
   text-align:center;
   float:left;
-  padding-left:0px
+  padding-top: 0.2vh;
 }
 
 .work_info{
@@ -176,13 +180,9 @@ body{
 }
 
 .work_due_date{
-  margin:0.1vh 0.4vw;
+  margin:0.1vh 0;
   padding:0;
   
-}
-
-.due_date_title{
-  margin-left:1vw;
 }
 
 .gyoumu{
@@ -192,9 +192,7 @@ body{
 }
 
 .text_1{
-  margin-right:0.5vw;
-   text-align:left;
-  
+  text-align: left;
 }
 
 
