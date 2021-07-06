@@ -1,6 +1,3 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 body{
    background-color:#E6FFE9;
 }
@@ -15,16 +12,15 @@ body{
   background-repeat:no-repeat;
   background-attachment:fixed;
   background-size:cover;
-  background: #43C6AC;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #F8FFAE, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #F8FFAE, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #43C6AC;  
+  background: -webkit-linear-gradient(to right, #F8FFAE, #43C6AC);  
+  background: linear-gradient(to right, #F8FFAE, #43C6AC); 
 }
 
 .user_information{
   
   margin-top:10vh;
   background-color:#fff;
-  // padding:0px;
   
   .user_status{
     height:6vw;
@@ -34,7 +30,6 @@ body{
     
     .current_user_name{
       padding:2vh 2vw;
-      // background-color:lightcyan;
       margin-right:2vw;
       font-size:23px;
       font-family: "Gill Sans", sans-serif;
@@ -42,7 +37,6 @@ body{
     
     .user_level{
       padding:2vh 1vw;
-      // background-color:lightcyan;
       font-size:23px;
       font-family: "Gill Sans", sans-serif;
     }
@@ -58,7 +52,6 @@ body{
   margin-top:8vh;
   padding:4vh 4vw; 
   height:5vh;
-  // background-color:#fff;
 }
 
 
@@ -69,23 +62,20 @@ body{
   height:550px;
   background-color:#fff;
   margin-top:10px;
-  // padding-top:10px;
   
   .work_title{
-    // background-color:lightcyan;
     margin-top:3vh;
     margin-left:3vw;
     font-size:20px;
     font-weight:bold;
     font-family: "Gill Sans", sans-serif;
-    
-    
   }
+  
    .work_index_space{
     background-color:#E6FFE9;
-    // height:435px;
     margin-left:3vw;
     padding-top:3vh;
+    height:55vh;
    }
 }
 
@@ -98,7 +88,6 @@ body{
   
   
   .work_title2{
-    // background-color:lightcyan;
     margin-top:3vh;
     margin-left:3vw;
     font-size:20px;
@@ -118,18 +107,11 @@ body{
   font-size: 20px;
   background-color:lightcyan;
   opacity:0.8;
-  
-  
-  
-//   &:hover{
-//     color:#fff;
-//   }
   }
 
 .btn-add:hover{
   color:#fff;
   background-color:#7bdae8;
-  // opacity:0.3;
 }
 
 .pie_chart{
@@ -153,11 +135,6 @@ body{
   margin-left:6vw;
   padding-top:2vh;
 }
-
-
-// .work_title{
-//   font-weight:bold;
-// }
 
 .each_work{
   // width:200px;
@@ -210,6 +187,7 @@ body{
 
 .gyoumu{
   list-style:none;
+  padding-top:1.1vh;
   // float:left;
 }
 
@@ -227,7 +205,6 @@ body{
   background-repeat:no-repeat;
   background-attachment:fixed;
   background-size:cover;
-  // background-color:#E6FFE9;
 }
 
 .work_title_info{
@@ -235,10 +212,6 @@ body{
   margin-top:8vh;
   margin-bottom:2vh;
 }
-
-// .work_description{
-//   height:30vh;
-// }
 
 .btn-add-work{
   margin-top:1vh;

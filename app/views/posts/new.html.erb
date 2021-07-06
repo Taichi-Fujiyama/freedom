@@ -33,11 +33,9 @@
             <div class="row">
               <div class="col-md-5 form-group">
                 <%= f.label :priority,"優先度(必須）" %>
-                <%#= f.select :priority,{"高":4,"中":5,"低":6,},{include_blank:"選択してください"},{class:"form-control"} %>
                 <%= f.collection_select :priority,Code.priority_select,:id,:name,{size:"15vw x 5vh"},{class:"form-control"} %>
               </div>
               
-              <!--担当者はf.selectを用いて当てる様にする-->
               <div class="col-md-offset-1 col-md-5 form-group">
                 <%= f.label :appointed_user_id,"担当者(必須）" %>
                 <%= f.collection_select :appointed_user_id, User.all ,:id,:name,{include_blank:"選択してください"},{class:"form-control"}%>

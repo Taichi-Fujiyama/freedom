@@ -1,21 +1,12 @@
 class PostsController < ApplicationController
-  # def create
-  #   @post = Post.new(
-  #     user_id:@current_user.id
-  #     )
-  # end
-  attr_accessor:update
-  
   def index
-    #間に合わせの各業務ステータスの値
-    # Post.group(:status).count
-    
     #以下のコードは、当初Post.where(status:"1",appointed_user_id: current_user.id).countとしていた。これでは、担当者の各ステータスが取得できないでので、appointed_user_idに修正
     @complete = Post.where(status:"1",appointed_user_id: current_user.id).count 
     @in_progress = Post.where(status:"2",appointed_user_id: current_user.id).count
     @not_yet = Post.where(status:"3",appointed_user_id: current_user.id).count
     # 以下の書き方もある
     # @complete = Post.where(status:"1").where(appointed_user_id: current_user.id).count 
+    
     
     # 以下は、円グラフの凡例を導入するためのコード
     sum = @complete + @in_progress + @not_yet
@@ -34,7 +25,7 @@ class PostsController < ApplicationController
     #追加した業務をユーザ別に一覧で表示するためのコード。Post.allとすると、全てのユーザーの　post内容が表示されてしまう。
   end
   
-  #投稿の追加に関するコントローラーを設定する
+  
   def new
     @post = Post.new
   end
@@ -63,8 +54,8 @@ class PostsController < ApplicationController
   
   def edit
     #以下のように投稿を特定するためののコードを記載する。登録者の名前は直接edit.html.erbに直接記載している。
-    @post = Post.find(params[:id])
     #sessionとparamsはハッシュの中でもparams[:id],session[:user_id]のように特殊な書き方をする.
+    @post = Post.find(params[:id])
   end
   
   
@@ -82,7 +73,7 @@ class PostsController < ApplicationController
              if user.experience == user.user_level
                user.user_level += 1
                user.experience = 0
-               flash[:primary] = "✨ Level Up!  Well done! ✨"
+               flash[:primary] = "✨ Level Up! Well done! ✨"
              end
            end
         end

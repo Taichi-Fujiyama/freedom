@@ -13,16 +13,11 @@ h1,h2,h3{
   padding-bottom: 15px;
   font-size: 20px;
   background-color: rgba(0,0,0,0.0);
-  
-//   &:hover{
-//     color:#fff;
-//   }
   }
 
 .btn-white:hover{
   color:#fff;
   background-color:#7bdae8;
-  // opacity:0.3;
 }
 
 .top-hero-wrapper{
@@ -33,10 +28,6 @@ h1,h2,h3{
   background-repeat:no-repeat;
   background-attachment:fixed;
   background-size:cover;
-  // background: #43C6AC;  /* fallback for old browsers */
-  // background: -webkit-linear-gradient(to right, #F8FFAE, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
-  // background: linear-gradient(to right, #F8FFAE, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 
 .top-hero-container{
@@ -55,13 +46,6 @@ h1,h2,h3{
   }
 }
 
-// .alert{
-//   margin_bottom:0px;
-//   position:fixed;
-//   width:100%;
-//   z-index:10000;
-// }
-
 .nav-info{
   margin-top:2.5vh;
   margin-right:1vw;
@@ -70,10 +54,8 @@ h1,h2,h3{
 }
 
 .ENG{
-//   font-weight:bold;
   margin-bottom:5vh;
 }
 .concept-text{
-  // font-weight: bold;
   font-family: "Gill Sans", sans-serif;
 }

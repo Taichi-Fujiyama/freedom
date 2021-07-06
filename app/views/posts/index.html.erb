@@ -17,7 +17,6 @@
       <div class="col-md-4 add_work_btn">
         <%= link_to "業務を追加",new_post_path,class:'btn btn-block btn-add' %>
       </div>
-      <!--<p class = "col-md-4 add_work_btn">業務追加</p>-->
       <div class="row">
         <div class="col-md-7 work_index">
           <p class="work_title">◆業務一覧</p>
@@ -31,7 +30,6 @@
               </ul>
               <div style = "height:44vh;width:41vw;overflow:auto;">
               <% @posts.each do |post| %>
-              　<!--各業務で改行をさせるため、<p>タグを使って改行する-->
                 <ul class="gyoumu"> 
                   <li class="col-md-4 each_work"> <%= link_to truncate(post.title,length:15),edit_post_path(post.id),class:'btn btn-block btn-work_desc' %> </li>
                 　<li class="col-md-3 work_status_name"><%= Code.status(post.status).name %></li>
@@ -105,7 +103,6 @@
    $(document).on('turbolinks:load', function() { 
      var ctx=document.getElementById("graph-area").getContext("2d");
      window.myPie=new Chart(ctx).Pie(pieData);
-    // responsive : true
     });
    
 </script>

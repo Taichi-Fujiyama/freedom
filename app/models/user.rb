@@ -6,17 +6,6 @@ class User < ApplicationRecord
   has_secure_password
   has_many :posts
   
-  # def post_comlete
-  #   # self = methodをよびだしたときに「左側」にあるやつ.ここではposts#updateのuserのこと
-  #   self.experience += 1
-  #   if self.experience == self.user_level
-  #     self.user_level += 1
-  #     self.experience = 0
-  #   end
-    
-  #   self.save(validate: false)
-  # end
-  
   def post_change
     self.experience -= 1
     self.save(validate: false)
