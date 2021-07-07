@@ -1,43 +1,47 @@
 <div class="home-wrapper-for-add">
-  <div class="container">
     <div class="row">
       <div class="new_form col-md-12">
-        <div class="background">
-          <h4 class="work_title_info">業務を追加する</h4>
-          
+        <div class="background row">
+          <h4 class="col-md-offset-1 work_title_info title_of_edit">業務を追加する</h4>
+        </div>
+        
           <%= form_for @post do |f| %>
-            <div class="form-group">
-              <%= f.label :title,"タイトル(必須 ※50字以内）" %>
-              <%= f.text_field :title,class:"form-control"%>
-            </div>
-            
-            <div class="form-group">
-              <%= f.label :description,"業務詳細(必須)" %>
-              <%= f.text_area :description, size:"20vw x 10vh",class:"form-control"%>
-            </div>
-            
+          　<div class="row">
+            　<div class="col-md-offset-1 col-md-10 form-group">
+              　<%= f.label :title,"◆タイトル(必須 ※50字以内）" %>
+              　<%= f.text_field :title,class:"form-control"%>
+            　</div>
+          　</div>
+          
+          　<div class="row">
+            　<div class="col-md-offset-1 col-md-10 form-group">
+              　<%= f.label :description,"◆業務詳細(必須)" %>
+              　<%= f.text_area :description, size:"20vw x 10vh",class:"form-control"%>
+            　</div>
+          　</div> 
+           
             <div class="row">
-              <div class="col-md-1 form-group">
-                <%= f.label :work_hour,"作業想定時間" %>
+              <div class="col-md-offset-1 col-md-1 form-group">
+                <%= f.label :work_hour,"◆作業想定時間" %>
                 <%= f.number_field	:work_hour,class:"form-control work_hour",min:"0"%>
               </div>
-               <div class="col-md-1 form-group">
-              　<%= f.label :work_hour,"時間",class:"time-label"%>
+              <div class="col-md-1 form-group">
+                <%= f.label :work_hour,"時間",class:"time-label"%>
               </div>
-              <div class="col-md-offset-4 col-md-5 form-group">
-                <%= f.label :due_date,"提出期限(必須)" %>
+              <div class="col-md-offset-3 col-md-5 col-md-offset-1 form-group">
+                <%= f.label :due_date,"◆提出期限(必須)" %>
                 <%= f.datetime_field :due_date,class:"form-control" %> 
               </div>
             </div>
             
             <div class="row">
-              <div class="col-md-5 form-group">
-                <%= f.label :priority,"優先度(必須）" %>
+              <div class="col-md-offset-1 col-md-4 form-group">
+                <%= f.label :priority,"◆優先度(必須）" %>
                 <%= f.collection_select :priority,Code.priority_select,:id,:name,{size:"15vw x 5vh"},{class:"form-control"} %>
               </div>
               
-              <div class="col-md-offset-1 col-md-5 form-group">
-                <%= f.label :appointed_user_id,"担当者(必須）" %>
+              <div class="col-md-offset-1 col-md-5 col-md-offset-1 form-group">
+                <%= f.label :appointed_user_id,"◆担当者(必須）" %>
                 <%= f.collection_select :appointed_user_id, User.all ,:id,:name,{include_blank:"選択してください"},{class:"form-control"}%>
                 <!--<%#= f.collection_select :user_id, @user ,:id,:name,include_blank:true %>としていたが、undefined method `map' for nil:NilClass が発生するエラーが出たので、サイトを参照-->
                 <!--users_controllerのdef newの部分に@user = User.allを追加。f.collection_selectの要素の配列部分に@userではなく、User.allを追加したら動いた。-->
@@ -46,14 +50,11 @@
               
             </div>
             <div class="row">
-              <div class="col-md-offset-9 col-md-3 add-btn-location">
+              <div class="col-md-offset-8 col-md-3 add-btn-location">
                 <%= f.submit "業務を追加する",class:"btn btn-block btn-add-work" %>
               </div>
             </div> 
           <% end %>
-          
-        </div>
       </div>
     </div>
-  </div>
 </div>

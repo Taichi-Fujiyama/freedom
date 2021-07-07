@@ -1,10 +1,11 @@
 <div class="home-wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 user_information">
+  <!--<div class="container">-->
+  　<div class="row"> 
+    <!--<div class="row"> ズレるのはmargin-left,right が原因-->
+      <div class="col-md-offset-1 col-md-7 user_information">
         <ul class="row user_status">
     　     <% if logged_in? %>
-            <li class="col-md-7 current_user_name">
+            <li class="col-md-offset-1 col-md-6 current_user_name">
              ユーザー名: <%= @current_user.name %>
             </li>
             <li class="col-md-5 user_level">
@@ -14,34 +15,34 @@
         </ul>
       </div>
       <!--<div class="col-md-1"></div>-->
-      <div class="col-md-4 add_work_btn">
+      <div class="col-md-3 add_work_btn">
         <%= link_to "業務を追加",new_post_path,class:'btn btn-block btn-add' %>
       </div>
       <div class="row">
-        <div class="col-md-7 work_index">
+        <div class="col-md-offset-1 col-md-6 work_index">
           <p class="work_title">◆業務一覧</p>
           <div class="work_index_space">
             <!--業務の一覧表示をするためのコード-->
             <div class="work_index_title">
               <ul class="row">
-                <li class="col-md-4 work_info text_1">タイトル</li>
-                <li class ="col-md-offset-1 col-md-2 work_info">進捗状況</li>
-                <li class="col-md-5 work_info due_date_title">提出期限</li> 
+                <li class="col-md-6 work_info text_1">タイトル</li>
+                <li class ="col-md-2 work_info">進捗状況</li>
+                <li class="col-md-4 work_info due_date_title">提出期限</li> 
               </ul>
               <div class="work_index_body">
-              <% @posts.each do |post| %>
-                <ul class="gyoumu row"> 
-                  <li class="col-md-4 each_work"> <%= link_to truncate(post.title,length:15),edit_post_path(post.id),class:'btn btn-block btn-work_desc' %> </li>
-                  <li class="col-md-offset-1 col-md-2 work_status_name"><%= Code.status(post.status).name %></li>
-                  <li class="col-md-5 work_due_date"><%= post.due_date.strftime("%Y年%m月%d日%-H時%-M分") %></li>
-                </ul>  
-              <% end %>
+                <% @posts.each do |post| %>
+                  <ul class="gyoumu row"> 
+                    <li class="col-md-6 each_work"> <%= link_to truncate(post.title,length:15),edit_post_path(post.id),class:'btn btn-block btn-work_desc' %> </li>
+                    <li class="col-md-2 work_status_name"><%= Code.status(post.status).name %></li>
+                    <li class="col-md-4 work_due_date"><%= post.due_date.strftime("%Y年%m月%d日%-H時%-M分") %></li>
+                  </ul>  
+                <% end %>
               </div>
             </div>
           </div>
         </div>
        
-        <div class="col-md-5 work_chart">
+        <div class="col-md-4 work_chart">
           <p class="work_title2">◆業務状況</p>
           <div class="pie_chart">
             <!--ここに円グラフを入れ込みたいので、canvasを記述する-->
@@ -67,7 +68,7 @@
       </div>
       
     </div>
-  </div>
+  <!--</div>-->
 </div>
 
 

@@ -2,9 +2,7 @@ body{
    background-color: #E6FFE9;
    padding : 0px;
 }
-// .row{
-//   padding:10px 0px;
-// }
+
 .home-wrapper{
   width:100vp;
   height:100vh;
@@ -49,8 +47,6 @@ body{
   padding: 4vh 4vw; 
   height: 5vh;
 }
-
-
 
 
 
@@ -137,10 +133,8 @@ body{
   padding-top: 2vh;
 }
 
-.each_work{
-  text-align: center;
-  float: left;
-  padding-top: 0.2vh;
+.gyoumu{
+  margin-top: 1.8vh;
 }
 
 .work_info{
@@ -161,7 +155,6 @@ body{
   border: 1px solid black;
   font-size: 10px;
   background-color: #fff;
-  width: 13vw;
   text-align: left;
   
   &:hover{
@@ -206,7 +199,16 @@ body{
 .work_title_info{
   color: black;
   margin-top: 8vh;
-  margin-bottom: 2vh;
+}
+
+.desc_work_title{
+  margin-top: 2vh;
+}
+
+.title_of_edit{
+  font-size: 20px;
+  padding: 1rem 2rem;
+  border-left: 6px double rgba(0,200,200,0.5);
 }
 
 .btn-add-work{
@@ -224,7 +226,7 @@ body{
 
 .time-label{
   margin-top: 4vh;
-  margin-left: 0vw;
+  margin-left: 0.5vw;
   font-size: 18px;
 }
 
@@ -235,7 +237,11 @@ body{
 }
 
 .added_user_name{
-  margin-top: 4vh;
+  margin-top: 8vh;
+  font-size: 20px;
+  font-family: "Gill Sans", sans-serif;
+  padding: 1rem ;
+  border-left: 6px double rgba(0,200,200,0.5);
 }
 
 .cp{
