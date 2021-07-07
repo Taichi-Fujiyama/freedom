@@ -1,57 +1,53 @@
 body{
-   background-color:#E6FFE9;
+   background-color: #E6FFE9;
+   padding : 0px;
 }
-.row{
-  margin:10px 0px;
-}
-
+// .row{
+//   padding:10px 0px;
+// }
 .home-wrapper{
   width:100vp;
   height:100vh;
-  background-position:center;
-  background-repeat:no-repeat;
-  background-attachment:fixed;
-  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   background: #43C6AC;  
   background: -webkit-linear-gradient(to right, #F8FFAE, #43C6AC);  
   background: linear-gradient(to right, #F8FFAE, #43C6AC); 
 }
 
+
 .user_information{
-  
-  margin-top:10vh;
-  background-color:#fff;
+  height: 10vh;
+  margin-top: 10vh;
+  background-color: #fff;
+ 
   
   .user_status{
-    height:6vw;
-    list-style:none;
-    padding-top:2.5vh;
-    
+    list-style: none;
+    font-weight: bold;
+   
     
     .current_user_name{
-      padding:2vh 2vw;
-      margin-right:2vw;
-      font-size:23px;
+      padding-top: 3vh;
+      font-size: 23px;
       font-family: "Gill Sans", sans-serif;
     }
     
     .user_level{
-      padding:2vh 1vw;
-      font-size:23px;
+      padding-top: 0.7vh;
+      font-size: 23px;
       font-family: "Gill Sans", sans-serif;
     }
   }
   
-  .user_status li{
-    float:left;
-    font-weight:bold;
-  }
 }
 
 .add_work_btn{
-  margin-top:8vh;
-  padding:4vh 4vw; 
-  height:5vh;
+  margin-top: 7.5vh;
+  padding: 4vh 4vw; 
+  height: 5vh;
 }
 
 
@@ -59,46 +55,46 @@ body{
 
 
 .work_index{
-  height:550px;
-  background-color:#fff;
-  margin-top:10px;
+  height: 70vh;
+  background-color: #fff;
+  margin-top: 10px;
      
   .work_title{
-    margin-top:3vh;
-    margin-left:3vw;
-    font-size:20px;
-    font-weight:bold;
+    margin-top: 3vh;
+    margin-left: 3vw;
+    font-size: 20px;
+    font-weight: bold;
     font-family: "Gill Sans", sans-serif;
   }
 
   .work_index_space{
-    background-color:#E6FFE9;
-    margin-left:3vw;
-    padding-top:3vh;
+    background-color: #E6FFE9;
+    margin-left: 3vw;
+    padding-top: 3vh;
   }
    
   ul.row {
-    padding: 0;
+    padding: 0 1vw;
   }
 
   &_body {
-    height: 390px;
+    height: 53vh;
     overflow: auto;
   }
 }
    
 .work_chart{
-  height:550px;
-  background-color:#fff;
-  margin-top:10px;
+  height:70vh;
+  background-color: #fff;
+  margin-top: 10px;
   
   
   .work_title2{
-    margin-top:3vh;
-    margin-left:3vw;
-    font-size:20px;
-    font-weight:bold;
-    width:150px;
+    margin-top: 3vh;
+    margin-left: 3vw;
+    font-size: 20px;
+    font-weight: bold;
+    width: 150px;
     font-family: "Gill Sans", sans-serif;
   }
   
@@ -106,18 +102,18 @@ body{
 }
 
 .btn-add{
-  color:black;
+  color: black;
   border: 1px solid #fff;
   padding-top: 2vh;
   padding-bottom: 2vh;
   font-size: 20px;
-  background-color:lightcyan;
-  opacity:0.8;
+  background-color: lightcyan;
+  opacity: 0.8;
   }
 
 .btn-add:hover{
-  color:#fff;
-  background-color:#7bdae8;
+  color: #fff;
+  background-color: #7bdae8;
 }
 
 .pie_chart{
@@ -126,129 +122,131 @@ body{
 }
 
 .work_status_info{
-  margin: 2vh auto 0;
-  padding-top:1vh;
-  height:18.5vh;
-  width:20vw;
-  background-color:#F8F8FF;
+  margin: 1vh auto 0;
+  padding-top: 1vh;
+  height: 18.5vh;
+  width: 20vw;
+  background-color: #F8F8FF;
 }
 
 .work_status_info li{
-  font-size:15px;
-  font-weight:bold;
+  font-size: 15px;
+  font-weight: bold;
   list-style: none;
-  margin-left:6vw;
-  padding-top:2vh;
+  margin-left: 6vw;
+  padding-top: 2vh;
 }
 
 .each_work{
-  // width:200px;
-  text-align:center;
-  float:left;
+  text-align: center;
+  float: left;
   padding-top: 0.2vh;
 }
 
 .work_info{
-  list-style:none;
-  float:left;
-  padding-right:1vw;
+  list-style: none;
+  float: left;
+  // padding-right:1vw;
   // margin-left:2vw;
-  padding-left:1vw;
-  text-align:center;
-  font-weight:bold;
+  // padding-left:1vw;
+  text-align: center;
+  font-weight: bold;
   font-family: "Gill Sans", sans-serif;
 }
 
 .btn-work_desc{
-  margin-top:0.1vh;
-  padding-top:0.5vh;
-  color:black;
-  border:1px solid black;
-  font-size:10px;
-  background-color:#fff;
-  width:13vw;
-  text-align:left;
+  margin-top: 0.1vh;
+  padding-top: 0.5vh;
+  color: black;
+  border: 1px solid black;
+  font-size: 10px;
+  background-color: #fff;
+  width: 13vw;
+  text-align: left;
   
   &:hover{
-    color:black;
-    background-color:#CCFFFF;
+    color: black;
+    background-color: #CCFFFF;
   }
 }
 
 .work_status_name{
-  text-align:center;
+  text-align: center;
 }
 
 .work_due_date{
-  margin:0.1vh 0;
-  padding:0;
-  
+  text-align: center;
 }
 
 .gyoumu{
-  list-style:none;
-  padding-top:1.1vh;
+  list-style: none;
+  padding-top: 1.1vh;
   // float:left;
 }
 
 .text_1{
   text-align: left;
+  padding-left: 2vw;
 }
 
 
+.due_date_title{
+  // padding-left:0;
+}
+
 .home-wrapper-for-add{
-  width:100vp;
-  height:100vh;
-  background-position:center;
-  background-repeat:no-repeat;
-  background-attachment:fixed;
-  background-size:cover;
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .work_title_info{
-  color:black;
-  margin-top:8vh;
-  margin-bottom:2vh;
+  color: black;
+  margin-top: 8vh;
+  margin-bottom: 2vh;
 }
 
 .btn-add-work{
-  margin-top:1vh;
-  color:black;
-  border:1px solid black;
-  background-color:#fff;
-  height:6vh;
+  margin-top: 1vh;
+  color: black;
+  border: 1px solid black;
+  background-color: #fff;
+  height: 6vh;
   
   &:hover{
-    color:black;
-    background-color:#CCFFFF;
+    color: black;
+    background-color: #CCFFFF;
   }
 }
 
 .time-label{
-  margin-top:4vh;
-  margin-left:0vw;
-  font-size:18px;
+  margin-top: 4vh;
+  margin-left: 0vw;
+  font-size: 18px;
 }
 
 
 .form-group{
-  padding-left:0px;
-  padding-right:0px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .added_user_name{
-  margin-top:4vh;
+  margin-top: 4vh;
 }
 
 .cp{
-  color:green;
+  color: green;
 }
 
 .ip{
-  color:#FFD700	;
+  color: #FFD700	;
 }
 
 .nyp{
-  color:red;
+  color: red;
 }
 

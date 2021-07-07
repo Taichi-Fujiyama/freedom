@@ -2,9 +2,9 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 user_information">
-        <ul class="user_status">
+        <ul class="row user_status">
     　     <% if logged_in? %>
-            <li class="col-md-6 current_user_name">
+            <li class="col-md-7 current_user_name">
              ユーザー名: <%= @current_user.name %>
             </li>
             <li class="col-md-5 user_level">
@@ -25,14 +25,14 @@
             <div class="work_index_title">
               <ul class="row">
                 <li class="col-md-4 work_info text_1">タイトル</li>
-                <li class ="col-md-3 work_info">進捗状況</li>
+                <li class ="col-md-offset-1 col-md-2 work_info">進捗状況</li>
                 <li class="col-md-5 work_info due_date_title">提出期限</li> 
               </ul>
               <div class="work_index_body">
               <% @posts.each do |post| %>
                 <ul class="gyoumu row"> 
                   <li class="col-md-4 each_work"> <%= link_to truncate(post.title,length:15),edit_post_path(post.id),class:'btn btn-block btn-work_desc' %> </li>
-                  <li class="col-md-3 work_status_name"><%= Code.status(post.status).name %></li>
+                  <li class="col-md-offset-1 col-md-2 work_status_name"><%= Code.status(post.status).name %></li>
                   <li class="col-md-5 work_due_date"><%= post.due_date.strftime("%Y年%m月%d日%-H時%-M分") %></li>
                 </ul>  
               <% end %>
@@ -51,7 +51,7 @@
             <input type="hidden" id="complete" value=<%= @complete %>> <!--完了の数値-->
             <input type="hidden" id="in_progress" value=<%= @in_progress %>> <!--対応中の数値-->
             <input type="hidden" id="not_yet" value=<%= @not_yet %>> <!--未対応の数値-->
-            <canvas id="graph-area" height="250" width="250"></canvas>
+            <canvas id="graph-area" height="300px" width="300px"></canvas>
             <!--ここまでが円グラフの数値とグラフの大きさに関するコード-->
             
           </div>
