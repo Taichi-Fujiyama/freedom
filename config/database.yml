@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: freedom_production
-  username: freedom
-  password: <%= ENV['FREEDOM_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  
