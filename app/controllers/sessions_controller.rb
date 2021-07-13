@@ -6,7 +6,6 @@ class SessionsController < ApplicationController #ログイン用のコントロ
     user = User.find_by(email: params[:sessions][:email])
     if user && user.authenticate(params[:sessions][:password])
       log_in user
-      # redirect_to root_path, success: "ログインに成功しました"
       redirect_to home_path,success: "ログインに成功しました"
      
     else

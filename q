@@ -1,0 +1,20 @@
+=> [[32m#<User:0x00007f456cdeac98[0m
+  id: [1;34m13[0m,
+  name: [31m[1;31m"[0m[31mUser1[1;31m"[0m[31m[0m,
+  email: [31m[1;31m"[0m[31muser1@user.com[1;31m"[0m[31m[0m,
+  password_digest: [31m[1;31m"[0m[31m$2a$12$lkSWNbSweksxpHkT6snGJOJOV2RgoDJoqw/1f9E2dAbTv7fSse1eq[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mSun[0m, [1;34m11[0m [1;34;4mJul[0m [1;34m2021[0m [1;34m13[0m:[1;34m45[0m:[1;34m51[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mTue[0m, [1;34m13[0m [1;34;4mJul[0m [1;34m2021[0m [1;34m06[0m:[1;34m30[0m:[1;34m19[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  role: [1;34m0[0m,
+  experience: [1;34m1[0m,
+  user_level: [1;34m2[0m[32m>[0m,
+ [32m#<User:0x00007f456cdeab58[0m
+  id: [1;34m14[0m,
+  name: [31m[1;31m"[0m[31m試験　用太（企画）[1;31m"[0m[31m[0m,
+  email: [31m[1;31m"[0m[31mshiken-youta@test.com[1;31m"[0m[31m[0m,
+  password_digest: [31m[1;31m"[0m[31m$2a$12$EiIodj1MRJC1Y.ry7I/AIe1YgPo8I9FPq6QtLrhxto8wEc9GPc/x.[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mTue[0m, [1;34m13[0m [1;34;4mJul[0m [1;34m2021[0m [1;34m08[0m:[1;34m08[0m:[1;34m49[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mTue[0m, [1;34m13[0m [1;34;4mJul[0m [1;34m2021[0m [1;34m08[0m:[1;34m15[0m:[1;34m43[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  role: [1;34m0[0m,
+  experience: [1;34m0[0m,
+  user_level: [1;34m2[0m[32m>[0m]

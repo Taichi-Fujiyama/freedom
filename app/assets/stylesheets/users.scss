@@ -1,11 +1,11 @@
 .users-new-wrapper{
-  width:100vw;
-  height:100vh;
+  width: 100vw;
+  height: 100vh;
   background-image: url("landscape-2990060_1920.jpg");
-  background-position:center center;
-  background-repeat:none;
-  background-attachment:fixed;
-  background-size:cover;
+  background-position: center center;
+  background-repeat: none;
+  background-attachment: fixed;
+  background-size: cover;
   
   .users-new-container{
     padding-top: 20vh;
@@ -15,28 +15,28 @@
 }
 
 .text-white{
-  color:#fff;
+  color: #fff;
   
 }
 
 .alert{
-  position:fixed;
-  width:100%;
-  z-index:10000;
-  height:8vh;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+  height: 8vh;
 }
 
 .alert-primary{
-  position:fixed;
-  top:33%;
-  left:33%;
-  height:40vh;  
-  z-index:10000;
-  font-size:30px;
-  background-image:url(freedom_flash.jpeg);
+  position: fixed;
+  top: 33%;
+  left: 33%;
+  height: 40vh;  
+  z-index: 10000;
+  font-size: 30px;
+  background-image: url(freedom_flash.jpeg);
   background-repeat: no-repeat;
-  padding-top:17vh;
-  padding-left:17vh;
+  padding-top: 17vh;
+  padding-left: 17vh;
   font-family: "Gill Sans", sans-serif;
 }
 
@@ -45,25 +45,24 @@
 // }
 
 .navbar-transparent{
-  background-color:rgba(0,200,200,0.5);
+  background-color: rgba(0,200,200,0.5);
  
   .navbar-brand{
-    // padding-top:3vh;
-    margin-top:15px;
-    margin-left:0px;
+    margin-top: 15px;
+    margin-left: 0;
   }
   
   .logout{
-    height:4vh;
-    width:4vw;
+    height: 4vh;
+    width: 4vw;
   }
 }
 
 
 
 .freedom_logo{
-  opacity:0.7;
-  height:8vh;
+  opacity: 0.7;
+  height: 8vh;
 }
 
 .sign-up{

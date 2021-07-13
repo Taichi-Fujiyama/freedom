@@ -13,7 +13,6 @@
           <% end %>
         </ul>
       </div>
-      <!--<div class="col-md-1"></div>-->
       <div class="col-md-4 add_work_btn">
         <%= link_to "業務を追加",new_post_path,class:'btn btn-block btn-add' %>
       </div>
@@ -21,7 +20,6 @@
         <div class="col-md-7 work_index">
           <p class="work_title">◆業務一覧</p>
           <div class="work_index_space">
-            <!--業務の一覧表示をするためのコード-->
             <div class="work_index_title">
               <ul class="row">
                 <li class="col-md-6 work_info text_1">タイトル</li>
@@ -31,7 +29,7 @@
               <div class="work_index_body">
                 <% @posts.each do |post| %>
                   <ul class="gyoumu row"> 
-                    <li class="col-md-6 each_work"> <%= link_to truncate(post.title,length:15),edit_post_path(post.id),class:'btn btn-block btn-work_desc' %> </li>
+                    <li class="col-md-6 each_work"> <%= link_to truncate(post.title,length:20),edit_post_path(post.id),class:'btn btn-block btn-work_desc' %> </li>
                     <li class="col-md-2 work_status_name"><%= Code.status(post.status).name %></li>
                     <li class="col-md-4 work_due_date"><%= post.due_date.strftime("%Y年%m月%d日%-H時%-M分") %></li>
                   </ul>  
