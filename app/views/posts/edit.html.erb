@@ -1,27 +1,27 @@
 <div class="home-wrapper-for-add">
-  <div>
+  <div class="container">
     <div class="row edit-margin-lr0">
       <div class="background row">
-        <h4 class="col-md-offset-1 col-md-2 added_user_name">
+        <h4 class="col-md-12 added_user_name">
           業務登録者：<%= @post.user.name %>
         </h4>
       </div>
-          <!--<div class="row">-->
+        
       <%= form_for @post ,url:{controller:"posts",action:"update",id: @post.id} do |f| %>
         <div class="row">
-          <div class="col-md-offset-1 col-md-2 form-group desc_work_title">
+          <div class="col-md-12 form-group">
             <%= f.label :description,"◆タイトル ：" %>
             <%= @post.title %>
           </div>
         </div>     
         <div class="row">
-          <div class="col-md-offset-1 col-md-10 form-group">
+          <div class="col-md-12 form-group">
             <%= f.label :description,"◆業務詳細" %>
             <%= f.text_area :description, size:"20vw x 10vh",class:"form-control"%>
           </div>
         </div>
         <div class="row">
-          <p class="col-md-offset-1 col-md-2 form-group">
+          <p class="col-md-2 form-group">
             <%= f.label :work_hour,"◆作業想定時間" %> : <%= @post.work_hour %> <%= f.label :work_hour,"時間" %>
           </p>
           <p class="col-md-2 form-group">
@@ -30,20 +30,20 @@
           </p>
           </div>
           <div class="row">
-            <div class="col-md-offset-1 col-md-10 form-group">
+            <div class="col-md-12 form-group">
               <%= f.label :URL,"◆成果物URL(データファイルのURLを添付してください)"%>
               <%= f.url_field :URL,class:"form-control"%>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-offset-1 col-md-5 form-group">
+            <div class="col-md-5 form-group">
               <%= f.label :status,"◆進捗状況" %>
               <%= f.collection_select :status,Code.status_select,:id,:name,{size:"15vw x 5vh"},{class:"form-control"} %>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-offset-9 col-md-2 add-btn-location">
-              <%= f.submit "編集を完了する",class:"btn btn-block btn-add-work" %>
+          <div class="row btn-for-edit-add">
+            <div class="col-md-offset-10 col-md-2 add-btn-location">
+              <%= f.submit "作業報告をする",class:"btn btn-block btn-add-work" %>
             </div>
           </div>
       <% end %>
